@@ -1,0 +1,48 @@
+/* rem famat */
+@function parseInt($num) {
+  @return $num / ($num * 0 + 1);
+}
+@mixin rem($property, $values...) {
+  $max: length($values);
+  $px: '';
+  $rem: '';
+
+  @for $i from 1 through $max {
+    $value: parseInt(nth($values, $i));
+
+    @if $value != 0 {
+      $px: #{$px + $value}px;
+    } @else {
+      $px: #{px + $value};
+    }
+
+    @if $i < $max {
+      $px: #{$px + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: parseInt(nth($values, $i));
+
+    @if $value != auto and $value != 0 {
+      $rem: #{$rem + $value/$m-root-font-size}rem;
+    } @else {
+      $rem: #{$rem + $value};
+    }
+
+    @if $i < $max {
+      $rem: #{$rem + " "};
+    }
+  }
+
+  //#{$property}: $px;
+  #{$property}: $rem;
+}
+
+@function rem($values){
+  $list: ();
+  @each $value in $values {
+    $list: #{$value/$m-root-font-size}rem;
+  }
+  @return $list; /* 10 */
+}

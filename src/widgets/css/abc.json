@@ -1,0 +1,22 @@
+{
+  "name": "css",
+  "desc": "航旅h5 组件样式库",
+  "type": "clam",
+  "isH5": "true",
+  "port": "8081",
+  "proxyPort": "8080",
+  "group": "mpi",
+  "src": "false",
+  "cssCompile": "scss",
+  "version": "2.0.30",
+  "combohtml": "true",
+  "env": "publish",
+  "author": {
+    "name": "智峰",
+    "email": "yejun.yj@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.alibaba-inc.com/mpi/css"
+  }
+}

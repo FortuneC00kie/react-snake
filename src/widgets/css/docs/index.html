@@ -1,0 +1,1403 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Mpicss - v2.0.30</title><link rel="stylesheet" href="assets/css/main.css"><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Mpicss - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>去啊无线前端基础UI框架</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Mpicss - 2.0.30</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="animation"><a href="#animation">动画</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="animation-mixin"><a href="#animation-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="m-anim-attr" data-type="mixin"><a href="#mixin-m-anim-attr">m-anim-attr</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-flash" data-type="mixin"><a href="#mixin-m-anim-flash">m-anim-flash</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-fade-in" data-type="mixin"><a href="#mixin-m-anim-fade-in">m-anim-fade-in</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-bounce-in" data-type="mixin"><a href="#mixin-m-anim-bounce-in">m-anim-bounce-in</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-blur-in" data-type="mixin"><a href="#mixin-m-anim-blur-in">m-anim-blur-in</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-flipx-in" data-type="mixin"><a href="#mixin-m-anim-flipx-in">m-anim-flipx-in</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-flipy-in" data-type="mixin"><a href="#mixin-m-anim-flipy-in">m-anim-flipy-in</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-newspaper" data-type="mixin"><a href="#mixin-m-anim-newspaper">m-anim-newspaper</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-bounce-down" data-type="mixin"><a href="#mixin-m-anim-bounce-down">m-anim-bounce-down</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-slit" data-type="mixin"><a href="#mixin-m-anim-slit">m-anim-slit</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-fall" data-type="mixin"><a href="#mixin-m-anim-fall">m-anim-fall</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-vanish-in" data-type="mixin"><a href="#mixin-m-anim-vanish-in">m-anim-vanish-in</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-foolish-out" data-type="mixin"><a href="#mixin-m-anim-foolish-out">m-anim-foolish-out</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-tada" data-type="mixin"><a href="#mixin-m-anim-tada">m-anim-tada</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-rubber" data-type="mixin"><a href="#mixin-m-anim-rubber">m-anim-rubber</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-jello" data-type="mixin"><a href="#mixin-m-anim-jello">m-anim-jello</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-pulse" data-type="mixin"><a href="#mixin-m-anim-pulse">m-anim-pulse</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-move" data-type="mixin"><a href="#mixin-m-anim-move">m-anim-move</a></li><li class="sidebar__item sassdoc__item" data-name="m-anim-rainbow" data-type="mixin"><a href="#mixin-m-anim-rainbow">m-anim-rainbow</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="color"><a href="#color">基础色值</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="color-variable"><a href="#color-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="m-primary-color" data-type="variable"><a href="#variable-m-primary-color">m-primary-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-emphasize-color" data-type="variable"><a href="#variable-m-emphasize-color">m-emphasize-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-light-txt-color" data-type="variable"><a href="#variable-m-light-txt-color">m-light-txt-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-dark-txt-color" data-type="variable"><a href="#variable-m-dark-txt-color">m-dark-txt-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-tab-txt-color" data-type="variable"><a href="#variable-m-tab-txt-color">m-tab-txt-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-sub-txt-color" data-type="variable"><a href="#variable-m-sub-txt-color">m-sub-txt-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-hint-txt-color" data-type="variable"><a href="#variable-m-hint-txt-color">m-hint-txt-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-divider-txt-color" data-type="variable"><a href="#variable-m-divider-txt-color">m-divider-txt-color</a></li><li class="sidebar__item sassdoc__item" data-name="m-cell-bg-color" data-type="variable"><a href="#variable-m-cell-bg-color">m-cell-bg-color</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="gradient"><a href="#gradient">渐变</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="gradient-mixin"><a href="#gradient-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="m-gradient-horizontal" data-type="mixin"><a href="#mixin-m-gradient-horizontal">m-gradient-horizontal</a></li><li class="sidebar__item sassdoc__item" data-name="m-gradient-vertical" data-type="mixin"><a href="#mixin-m-gradient-vertical">m-gradient-vertical</a></li><li class="sidebar__item sassdoc__item" data-name="m-gradient-directional" data-type="mixin"><a href="#mixin-m-gradient-directional">m-gradient-directional</a></li><li class="sidebar__item sassdoc__item" data-name="m-gradient-horizontal-three-colors" data-type="mixin"><a href="#mixin-m-gradient-horizontal-three-colors">m-gradient-horizontal-three-colors</a></li><li class="sidebar__item sassdoc__item" data-name="m-gradient-vertical-three-colors" data-type="mixin"><a href="#mixin-m-gradient-vertical-three-colors">m-gradient-vertical-three-colors</a></li><li class="sidebar__item sassdoc__item" data-name="m-gradient-radial" data-type="mixin"><a href="#mixin-m-gradient-radial">m-gradient-radial</a></li><li class="sidebar__item sassdoc__item" data-name="m-gradient-striped" data-type="mixin"><a href="#mixin-m-gradient-striped">m-gradient-striped</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="ui"><a href="#ui">页面UI相关</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="ui-mixin"><a href="#ui-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="m-btn" data-type="mixin"><a href="#mixin-m-btn">m-btn</a></li><li class="sidebar__item sassdoc__item" data-name="m-loading" data-type="mixin"><a href="#mixin-m-loading">m-loading</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="ui-placeholder"><a href="#ui-placeholder">placeholders</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="m-page-loading" data-type="placeholder"><a href="#placeholder-m-page-loading">m-page-loading</a></li><li class="sidebar__item sassdoc__item" data-name="m-loading-icon" data-type="placeholder"><a href="#placeholder-m-loading-icon">m-loading-icon</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">其他</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="m-root-font-size" data-type="variable"><a href="#variable-m-root-font-size">m-root-font-size</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-placeholder"><a href="#undefined-placeholder">placeholders</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="clearfix" data-type="placeholder"><a href="#placeholder-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-name="m-fig-placeholder" data-type="placeholder"><a href="#placeholder-m-fig-placeholder">m-fig-placeholder</a></li><li class="sidebar__item sassdoc__item" data-name="m-reset-text" data-type="placeholder"><a href="#placeholder-m-reset-text">m-reset-text</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="m-border-radius" data-type="mixin"><a href="#mixin-m-border-radius">m-border-radius</a></li><li class="sidebar__item sassdoc__item" data-name="m-border-top-radius" data-type="mixin"><a href="#mixin-m-border-top-radius">m-border-top-radius</a></li><li class="sidebar__item sassdoc__item" data-name="m-border-right-radius" data-type="mixin"><a href="#mixin-m-border-right-radius">m-border-right-radius</a></li><li class="sidebar__item sassdoc__item" data-name="m-border-bottom-radius" data-type="mixin"><a href="#mixin-m-border-bottom-radius">m-border-bottom-radius</a></li><li class="sidebar__item sassdoc__item" data-name="m-border-left-radius" data-type="mixin"><a href="#mixin-m-border-left-radius">m-border-left-radius</a></li><li class="sidebar__item sassdoc__item" data-name="m-box-sizing" data-type="mixin"><a href="#mixin-m-box-sizing">m-box-sizing</a></li><li class="sidebar__item sassdoc__item" data-name="m-center-block" data-type="mixin"><a href="#mixin-m-center-block">m-center-block</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1b" data-type="mixin"><a href="#mixin-m-r1b">m-r1b</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1bl" data-type="mixin"><a href="#mixin-m-r1bl">m-r1bl</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1br" data-type="mixin"><a href="#mixin-m-r1br">m-r1br</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1bt" data-type="mixin"><a href="#mixin-m-r1bt">m-r1bt</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1bb" data-type="mixin"><a href="#mixin-m-r1bb">m-r1bb</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1bt-bg" data-type="mixin"><a href="#mixin-m-r1bt-bg">m-r1bt-bg</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1bb-bg" data-type="mixin"><a href="#mixin-m-r1bb-bg">m-r1bb-bg</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1bl-bg" data-type="mixin"><a href="#mixin-m-r1bl-bg">m-r1bl-bg</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1br-bg" data-type="mixin"><a href="#mixin-m-r1br-bg">m-r1br-bg</a></li><li class="sidebar__item sassdoc__item" data-name="m-r1b-bg" data-type="mixin"><a href="#mixin-m-r1b-bg">m-r1b-bg</a></li><li class="sidebar__item sassdoc__item" data-name="m-resizable" data-type="mixin"><a href="#mixin-m-resizable">m-resizable</a></li><li class="sidebar__item sassdoc__item" data-name="m-size" data-type="mixin"><a href="#mixin-m-size">m-size</a></li><li class="sidebar__item sassdoc__item" data-name="m-normal-tag" data-type="mixin"><a href="#mixin-m-normal-tag">m-normal-tag</a></li><li class="sidebar__item sassdoc__item" data-name="m-red-tag" data-type="mixin"><a href="#mixin-m-red-tag">m-red-tag</a></li><li class="sidebar__item sassdoc__item" data-name="m-line-clamp-ellipsis" data-type="mixin"><a href="#mixin-m-line-clamp-ellipsis">m-line-clamp-ellipsis</a></li><li class="sidebar__item sassdoc__item" data-name="m-line-clamp-fade" data-type="mixin"><a href="#mixin-m-line-clamp-fade">m-line-clamp-fade</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="animation"><div class="container">动画</div></h1><section class="main__sub-section" id="animation-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-m-anim-attr"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-m-anim-attr">m-anim-attr</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-attr() { 
+    @each $key, $value in $configMap {
+        -webkit-animation-#{$key}: $value;
+        animation-#{$key}: $value;
+    };
+ }" data-collapsed="@mixin m-anim-attr() { ... }"><code>@mixin m-anim-attr() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>anim 属性map</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="mixin-m-anim-flash"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-flash">m-anim-flash</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-flash($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-flash,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0%,100%,50% {
+                    opacity: 1
+                }
+                25%,75% {
+                    opacity: 0
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0%,100%,50% {
+                    opacity: 1
+                }
+                25%,75% {
+                    opacity: 0
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-flash($configMap, $custom: false) { ... }"><code>@mixin m-anim-flash($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>闪烁动画</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>直接使用:</p></div><pre class="example__code language-flash"><code> scss file:
+ .example {
+     @include m-anim-flash();
+ }
+ css file:
+ .example {
+     -webkit-animation-iteration-count: 1;
+     animation-iteration-count: 1;
+     -webkit-animation-fill-mode: both;
+     animation-fill-mode: both;
+     -webkit-animation-name: m-flash;
+     animation-name: m-flash;
+     -webkit-animation-duration: 1s;
+     animation-duration: 1s; }
+ @-webkit-keyframes {
+     0%,100%,50% {
+         opacity: 1; }
+     25%,75% {
+         opacity: 0; } }
+@keyframes {
+     0%,100%,50% {
+         opacity: 1; }
+     25%,75% {
+         opacity: 0; } }</code></pre></div><div class="item__example example"><div class="example__description"><p>含参数:</p></div><pre class="example__code language-flash"><code>scss file:
+.example {
+    @include m-anim-flash((
+        duration: 2s, 
+        fill-mode: both, 
+        name: m-flash-cus
+    ), true) {
+        0%,100%,50% {
+            opacity: .6
+        }
+        25%,75% {
+            opacity: 0
+        }
+    };
+}
+
+css file:
+.example {
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: m-flash-cus;
+    animation-name: m-flash-cus;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s; }
+@-webkit-keyframes m-flash-cus {
+    0%,100%,50% {
+        opacity: 0.6; }
+    25%,75% {
+        opacity: 0; } }
+@keyframes m-flash-cus {
+    0%,100%,50% {
+        opacity: 0.6; }
+    25%,75% {
+        opacity: 0; } }</code></pre></div></section><section class="main__item container item" id="mixin-m-anim-fade-in"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-fade-in">m-anim-fade-in</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-fade-in($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-fade-in,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-fade-in($configMap, $custom: false) { ... }"><code>@mixin m-anim-fade-in($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>渐现动画</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-bounce-in"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-bounce-in">m-anim-bounce-in</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-bounce-in($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-bounce-in,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: scale3d(.3, .3, .3);
+                }
+                20% {
+                    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                }
+                40% {
+                    -webkit-transform: scale3d(.9, .9, .9);
+                }
+                60% {
+                    opacity: 1;
+                    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                }
+                80% {
+                    -webkit-transform: scale3d(.97, .97, .97);
+                }
+                100% {
+                    opacity: 1;
+                    -webkit-transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 0;
+                    transform: scale3d(.3, .3, .3);
+                }
+                20% {
+                    transform: scale3d(1.1, 1.1, 1.1);
+                }
+                40% {
+                    transform: scale3d(.9, .9, .9);
+                }
+                60% {
+                    opacity: 1;
+                    transform: scale3d(1.03, 1.03, 1.03);
+                }
+                80% {
+                    transform: scale3d(.97, .97, .97);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-bounce-in($configMap, $custom: false) { ... }"><code>@mixin m-anim-bounce-in($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>弹性渐现动画</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-blur-in"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-blur-in">m-anim-blur-in</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-blur-in($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-blur-in,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    opacity: 0;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(2, 2);
+                    filter: blur(100px);
+                }
+                to {
+                    opacity: 1;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(1, 1);
+                    filter: blur(0px);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    opacity: 0;
+                    transform-origin: 50% 50%;
+                    transform: scale(2, 2);
+                    filter: blur(100px);
+                }
+                to {
+                    opacity: 1;
+                    transform-origin: 50% 50%;
+                    transform: scale(1, 1);
+                    filter: blur(0px);
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-blur-in($configMap, $custom: false) { ... }"><code>@mixin m-anim-blur-in($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>模糊渐现动画</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-flipx-in"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-flipx-in">m-anim-flipx-in</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-flipx-in($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-flipx-in,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 20px) rotateX(60deg) ;
+                    opacity: 0
+                }
+                30% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 20px) rotateX(-6deg)
+                }
+                75% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 10px) rotateX(3deg)
+                }
+                100% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 2px) rotateX(0deg);
+                    opacity: 1
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    transform: perspective(400px) translate3d(0, 0, 20px) rotateX(60deg);
+                    opacity: 0
+                }
+                30% {
+                    transform: perspective(400px) translate3d(0, 0, 20px) rotateX(-6deg)
+                }
+                75% {
+                    transform: perspective(400px) translate3d(0, 0, 10px) rotateX(3deg)
+                }
+                100% {
+                    transform: perspective(400px) translate3d(0, 0, 2px) rotateX(0deg);
+                    opacity: 1
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-flipx-in($configMap, $custom: false) { ... }"><code>@mixin m-anim-flipx-in($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>水平翻转渐现动画</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-flipy-in"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-flipy-in">m-anim-flipy-in</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-flipy-in($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-flipy-in,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 20px) rotateY(60deg);
+                    opacity: 0
+                }
+                30% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 20px) rotateY(-6deg)
+                }
+                75% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 10px) rotateY(3deg)
+                }
+                100% {
+                    -webkit-transform: perspective(400px) translate3d(0, 0, 2px) rotateY(0deg);
+                    opacity: 1
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    transform: perspective(400px) translate3d(0, 0, 20px) rotateY(60deg);
+                    opacity: 0
+                }
+                30% {
+                    transform: perspective(400px) translate3d(0, 0, 20px) rotateY(-6deg)
+                }
+                75% {
+                    transform: perspective(400px) translate3d(0, 0, 10px) rotateY(3deg)
+                }
+                100% {
+                    transform: perspective(400px) translate3d(0, 0, 2px) rotateY(0deg);
+                    opacity: 1
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-flipy-in($configMap, $custom: false) { ... }"><code>@mixin m-anim-flipy-in($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>垂直翻转渐现动画</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-newspaper"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-newspaper">m-anim-newspaper</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-newspaper($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-newspaper,
+        duration: 0.5s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    -webkit-transform: scale(0) rotate(720deg);
+                    opacity: 0;
+                }
+                to {
+                    -webkit-transform: scale(1) rotate(0deg);
+                    opacity: 1;
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    transform: scale(0) rotate(720deg);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1) rotate(0deg);
+                    opacity: 1;
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-newspaper($configMap, $custom: false) { ... }"><code>@mixin m-anim-newspaper($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>报纸飞出动效</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-bounce-down"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-bounce-down">m-anim-bounce-down</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-bounce-down($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-bounce-down,
+        duration: 0.5s,
+        timing-function: cubic-bezier(0.2, 0.6, 0.35, 1.000)
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translate3d(0, -3000px, 0);
+                }
+                60% {
+                    opacity: 1;
+                    -webkit-transform: translate3d(0, 25px, 0);
+                }
+                75% {
+                    -webkit-transform: translate3d(0, -10px, 0);
+                }
+                90% {
+                    -webkit-transform: translate3d(0, 5px, 0);
+                }
+                to {
+                    -webkit-transform: none;
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 0;
+                    transform: translate3d(0, -3000px, 0);
+                }
+                60% {
+                    opacity: 1;
+                    transform: translate3d(0, 25px, 0);
+                }
+                75% {
+                    transform: translate3d(0, -10px, 0);
+                }
+                90% {
+                    transform: translate3d(0, 5px, 0);
+                }
+                to {
+                    transform: none;
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-bounce-down($configMap, $custom: false) { ... }"><code>@mixin m-anim-bounce-down($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>弹性落下效果</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-slit"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-slit">m-anim-slit</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-slit($configMap, $custom: false) { 
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateZ(-3000px) rotateY(90deg);
+    transform: translateZ(-3000px) rotateY(90deg);
+    $defaultConf: (
+        iteration-count: 1,
+        name: m-slit,
+        duration: 0.7s,
+        timing-function: ease-out,
+        fill-mode: forwards
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                50% { 
+                    -webkit-transform: translateZ(-250px) rotateY(89deg); 
+                    opacity: .5; 
+                }
+                100% { 
+                    -webkit-transform: translateZ(0) rotateY(0deg); 
+                    opacity: 1; 
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                50% { 
+                    transform: translateZ(-250px) rotateY(89deg); 
+                    opacity: .5;
+                }
+                100% { 
+                    transform: translateZ(0) rotateY(0deg); 
+                    opacity: 1; 
+                }
+            }
+        }
+    }
+ }" data-collapsed="@mixin m-anim-slit($configMap, $custom: false) { ... }"><code>@mixin m-anim-slit($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>3D撕裂飞出(要求parent已经设置perspective,默认请设置为3000px)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-fall"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-fall">m-anim-fall</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-fall($configMap, $custom: false) { 
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    $defaultConf: (
+        iteration-count: 1,
+        name: m-fall,
+        duration: 0.7s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from { 
+                    -webkit-transform: translateZ(600px) rotateX(40deg); 
+                    opacity: 0; 
+                }
+                to { 
+                    -webkit-transform: translateZ(0px) rotateX(0deg); 
+                    opacity: 1; 
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from { 
+                    transform: translateZ(600px) rotateX(40deg); 
+                    opacity: 0;
+                }
+                to { 
+                    transform: translateZ(0px) rotateX(0deg); 
+                    opacity: 1; 
+                }
+            }
+        }
+    }
+ }" data-collapsed="@mixin m-anim-fall($configMap, $custom: false) { ... }"><code>@mixin m-anim-fall($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>3D掉落飞出(要求parent已经设置perspective,默认请设置为1300px)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-vanish-in"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-vanish-in">m-anim-vanish-in</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-vanish-in($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        name: m-vanishIn,
+        duration: 0.7s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 0;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(2, 2);
+                    -webkit-filter: blur(90px);
+                }
+
+                100% {
+                    opacity: 1;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(1, 1);
+                    -webkit-filter: blur(0px);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 0;
+                    transform-origin: 50% 50%;
+                    transform: scale(2, 2);
+                    -webkit-filter: blur(90px); // 目前滤镜一定要加webkit前缀
+                }
+                100% {
+                    opacity: 1;
+                    transform-origin: 50% 50%;
+                    transform: scale(1, 1);
+                    -webkit-filter: blur(0px); // 目前滤镜一定要加webkit前缀
+                }
+            }
+        }
+    }
+ }" data-collapsed="@mixin m-anim-vanish-in($configMap, $custom: false) { ... }"><code>@mixin m-anim-vanish-in($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>虚化渐现</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-foolish-out"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-foolish-out">m-anim-foolish-out</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-foolish-out($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        name: m-foolishOut,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 1;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(1, 1) rotate(360deg);
+                }
+                20% {
+                    opacity: 1;
+                    -webkit-transform-origin: 0% 0%;
+                    -webkit-transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                40% {
+                    opacity: 1;
+                    -webkit-transform-origin: 100% 0%;
+                    -webkit-transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                60% {
+                    opacity: 1;
+                    -webkit-transform-origin: 0%;
+                    -webkit-transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                80% {
+                    opacity: 1;
+                    -webkit-transform-origin: 0% 100%;
+                    -webkit-transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                100% {
+                    opacity: 0;
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: scale(0, 0) rotate(0deg);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    opacity: 1;
+                    transform-origin: 50% 50%;
+                    transform: scale(1, 1) rotate(360deg);
+                }
+                20% {
+                    opacity: 1;
+                    transform-origin: 0% 0%;
+                    transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                40% {
+                    opacity: 1;
+                    transform-origin: 100% 0%;
+                    transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                60% {
+                    opacity: 1;
+                    transform-origin: 0%;
+                    transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                80% {
+                    opacity: 1;
+                    transform-origin: 0% 100%;
+                    transform: scale(0.5, 0.5) rotate(0deg);
+                }
+                100% {
+                    opacity: 0;
+                    transform-origin: 50% 50%;
+                    transform: scale(0, 0) rotate(0deg);
+                }
+            }
+        }
+    }
+ }" data-collapsed="@mixin m-anim-foolish-out($configMap, $custom: false) { ... }"><code>@mixin m-anim-foolish-out($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>位移+缩放消失</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-tada"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-tada">m-anim-tada</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-tada($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-tada,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                }
+
+                10%, 20% {
+                    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+                }
+
+                30%, 50%, 70%, 90% {
+                    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+                }
+
+                40%, 60%, 80% {
+                    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+                }
+
+                100% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                0% {
+                    transform: scale3d(1, 1, 1);
+                }
+
+                10%, 20% {
+                    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+                }
+
+                30%, 50%, 70%, 90% {
+                    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+                }
+
+                40%, 60%, 80% {
+                    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+                }
+
+                100% {
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-tada($configMap, $custom: false) { ... }"><code>@mixin m-anim-tada($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>tada</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-rubber"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-rubber">m-anim-rubber</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-rubber($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-rubber,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+                30% {
+                    -webkit-transform: scale3d(1.25, 0.75, 1);
+                    transform: scale3d(1.25, 0.75, 1);
+                }
+                40% {
+                    -webkit-transform: scale3d(0.75, 1.25, 1);
+                    transform: scale3d(0.75, 1.25, 1);
+                }
+                50% {
+                    -webkit-transform: scale3d(1.15, 0.85, 1);
+                    transform: scale3d(1.15, 0.85, 1);
+                }
+                65% {
+                    -webkit-transform: scale3d(.95, 1.05, 1);
+                    transform: scale3d(.95, 1.05, 1);
+                }
+                75% {
+                    -webkit-transform: scale3d(1.05, .95, 1);
+                    transform: scale3d(1.05, .95, 1);
+                }
+                to {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+                30% {
+                    -webkit-transform: scale3d(1.25, 0.75, 1);
+                    transform: scale3d(1.25, 0.75, 1);
+                }
+                40% {
+                    -webkit-transform: scale3d(0.75, 1.25, 1);
+                    transform: scale3d(0.75, 1.25, 1);
+                }
+                50% {
+                    -webkit-transform: scale3d(1.15, 0.85, 1);
+                    transform: scale3d(1.15, 0.85, 1);
+                }
+                65% {
+                    -webkit-transform: scale3d(.95, 1.05, 1);
+                    transform: scale3d(.95, 1.05, 1);
+                }
+                75% {
+                    -webkit-transform: scale3d(1.05, .95, 1);
+                    transform: scale3d(1.05, .95, 1);
+                }
+                to {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-rubber($configMap, $custom: false) { ... }"><code>@mixin m-anim-rubber($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>橡皮效果</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-jello"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-jello">m-anim-jello</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-jello($configMap, $custom: false) { 
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-jello,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from, 11.1%, to {
+                    -webkit-transform: none;
+                    transform: none;
+                }
+                22.2% {
+                    -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+                    transform: skewX(-12.5deg) skewY(-12.5deg);
+                }
+                33.3% {
+                    -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+                    transform: skewX(6.25deg) skewY(6.25deg);
+                }
+                44.4% {
+                    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+                    transform: skewX(-3.125deg) skewY(-3.125deg);
+                }
+                55.5% {
+                    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+                    transform: skewX(1.5625deg) skewY(1.5625deg);
+                }
+                66.6% {
+                    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+                    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+                }
+                77.7% {
+                    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
+                    transform: skewX(0.390625deg) skewY(0.390625deg);
+                }
+                88.8% {
+                    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+                    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from, 11.1%, to {
+                    -webkit-transform: none;
+                    transform: none;
+                }
+                22.2% {
+                    -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+                    transform: skewX(-12.5deg) skewY(-12.5deg);
+                }
+                33.3% {
+                    -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+                    transform: skewX(6.25deg) skewY(6.25deg);
+                }
+                44.4% {
+                    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+                    transform: skewX(-3.125deg) skewY(-3.125deg);
+                }
+                55.5% {
+                    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+                    transform: skewX(1.5625deg) skewY(1.5625deg);
+                }
+                66.6% {
+                    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+                    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+                }
+                77.7% {
+                    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
+                    transform: skewX(0.390625deg) skewY(0.390625deg);
+                }
+                88.8% {
+                    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+                    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-jello($configMap, $custom: false) { ... }"><code>@mixin m-anim-jello($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>果冻效果</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-pulse"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-pulse">m-anim-pulse</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-pulse($configMap, $custom: false) { 
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-pulse,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+                70% {
+                    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+                    transform: scale3d(1.15, 1.15, 1.15);
+                }
+                to {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+                70% {
+                    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+                    transform: scale3d(1.15, 1.15, 1.15);
+                }
+                to {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-pulse($configMap, $custom: false) { ... }"><code>@mixin m-anim-pulse($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>脉冲效果</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-move"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-move">m-anim-move</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-move($configMap, $direction: down, $distance: 3000px) { 
+    $defaultConf: (
+        iteration-count: 1,
+        fill-mode: both,
+        name: m-move,
+        duration: 1s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($direction == up) {
+                from {
+                    -webkit-transform: translate3d(0, $distance, 0);
+                    transform: translate3d(0, $distance, 0)
+                }
+                to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0)
+                }
+            } @else if ($direction == down){
+                from {
+                    -webkit-transform: translate3d(0, $distance, 0);
+                    transform: translate3d(0, $distance, 0)
+                }
+                to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0)
+                }
+            } @else if ($direction == left){
+                from {
+                    -webkit-transform: translate3d($distance, 0, 0);
+                    transform: translate3d($distance, 0, 0)
+                }
+                to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0)
+                }
+            } @else if ($direction == right){
+                from {
+                    -webkit-transform: translate3d(-$distance, 0, 0);
+                    transform: translate3d(-$distance, 0, 0)
+                }
+                to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0)
+                }
+            }
+        }
+        @keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($direction == up) {
+            } @else {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-move($configMap, $direction: down, $distance: 3000px) { ... }"><code>@mixin m-anim-move($configMap, $direction: down, $distance: 3000px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>位移动画</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>运动方向</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>down</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$distance</code></th><td data-label="desc"><p>运动距离</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>3000px</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-anim-rainbow"><h3 class="item__heading"><a class="item__name" href="#mixin-m-anim-rainbow">m-anim-rainbow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-anim-rainbow($configMap, $custom: false) { 
+    $defaultConf: (
+        iteration-count: infinite,
+        fill-mode: both,
+        name: m-rainbow,
+        duration: 4s
+    );
+    @include m-anim-attr(map-merge($defaultConf, $configMap));
+    @at-root(without: all) {
+        @-webkit-keyframes #{map-get(map-merge($defaultConf, $configMap), name)} {
+            @if ($custom) {
+                @content;
+            } @else {
+                from {
+                    -webkit-filter: hue-rotate(0deg);
+                }
+                to {
+                    -webkit-filter: hue-rotate(-360deg);
+                }
+            }
+        }
+    };
+ }" data-collapsed="@mixin m-anim-rainbow($configMap, $custom: false) { ... }"><code>@mixin m-anim-rainbow($configMap, $custom: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>彩虹滤镜动画(目前滤镜一定要加webkit前缀)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$configMap</code></th><td data-label="desc"><p>配置map</p></td><td data-label="type"><code>Object</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$custom</code></th><td data-label="desc"><p>是否自定义动画帧</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default"><code>false</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="color"><div class="container">基础色值</div></h1><section class="main__sub-section" id="color-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="variable-m-primary-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-primary-color">m-primary-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-primary-color: #009FF0;</code></pre><span class="color-preview--block" style="background: #009FF0"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>主色</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-emphasize-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-emphasize-color">m-emphasize-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-emphasize-color: #ff5b45;</code></pre><span class="color-preview--block" style="background: #ff5b45"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>重点提示色（如金额），可根据业务自行使用</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-light-txt-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-light-txt-color">m-light-txt-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-light-txt-color: #fff;</code></pre><span class="color-preview--block" style="background: #fff"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>浅色文字颜色，仅用于标题\按钮和深色背景中</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-dark-txt-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-dark-txt-color">m-dark-txt-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-dark-txt-color: #333;</code></pre><span class="color-preview--block" style="background: #333"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>深色文字颜色，标题\输入框标签\输入内容\文本</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-tab-txt-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-tab-txt-color">m-tab-txt-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-tab-txt-color: #666;</code></pre><span class="color-preview--block" style="background: #666"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>tab文字颜色，tab文字、文本</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-sub-txt-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-sub-txt-color">m-sub-txt-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-sub-txt-color: #a5a5a5;</code></pre><span class="color-preview--block" style="background: #a5a5a5"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>次要文字颜色，小标题、说明文字</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-hint-txt-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-hint-txt-color">m-hint-txt-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-hint-txt-color: #ccc;</code></pre><span class="color-preview--block" style="background: #ccc"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>提示文字颜色，暗提示</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-divider-txt-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-divider-txt-color">m-divider-txt-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-divider-txt-color: #e0e0e0;</code></pre><span class="color-preview--block" style="background: #e0e0e0"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>分割线文字颜色</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section><section class="main__item container item" id="variable-m-cell-bg-color"><h3 class="item__heading"><a class="item__name" href="#variable-m-cell-bg-color">m-cell-bg-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-cell-bg-color: #f2f3f4;</code></pre><span class="color-preview--block" style="background: #f2f3f4"></span></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>cell灰色条和背景色</p></div><h3 class="item__sub-heading">Type</h3><p><code>Color</code></p></section></section></section><section class="main__section"><h1 class="main__heading" id="gradient"><div class="container">渐变</div></h1><section class="main__sub-section" id="gradient-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-m-gradient-horizontal"><h3 class="item__heading"><a class="item__name" href="#mixin-m-gradient-horizontal">m-gradient-horizontal</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) { 
+    background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent);
+    background-repeat: repeat-x;
+ }" data-collapsed="@mixin m-gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) { ... }"><code>@mixin m-gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>水平渐变</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-color</code></th><td data-label="desc"><p>开始颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#555; color: #fff">#555</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-color</code></th><td data-label="desc"><p>终止颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#333; color: #fff">#333</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-percent</code></th><td data-label="desc"><p>起始百分比</p></td><td data-label="type"><code>Percent</code></td><td data-label="default"><code>0%</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-percent</code></th><td data-label="desc"><p>结束百分比</p></td><td data-label="type"><code>Percent</code></td><td data-label="default"><code>100%</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-gradient-vertical"><h3 class="item__heading"><a class="item__name" href="#mixin-m-gradient-vertical">m-gradient-vertical</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) { 
+    background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
+    background-repeat: repeat-x;
+ }" data-collapsed="@mixin m-gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) { ... }"><code>@mixin m-gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>垂直渐变</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-color</code></th><td data-label="desc"><p>开始颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#555; color: #fff">#555</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-color</code></th><td data-label="desc"><p>终止颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#333; color: #fff">#333</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-percent</code></th><td data-label="desc"><p>起始百分比</p></td><td data-label="type"><code>Percentage</code></td><td data-label="default"><code>0%</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-percent</code></th><td data-label="desc"><p>结束百分比</p></td><td data-label="type"><code>Percentage</code></td><td data-label="default"><code>100%</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-gradient-directional"><h3 class="item__heading"><a class="item__name" href="#mixin-m-gradient-directional">m-gradient-directional</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg, $start-percent: 0%, $end-percent: 100%) { 
+    background-repeat: repeat-x;
+    background-image: linear-gradient($deg, $start-color $start-percent, $end-color $end-percent);
+ }" data-collapsed="@mixin m-gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg, $start-percent: 0%, $end-percent: 100%) { ... }"><code>@mixin m-gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg, $start-percent: 0%, $end-percent: 100%) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>角度渐变</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-color</code></th><td data-label="desc"><p>开始颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#555; color: #fff">#555</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-color</code></th><td data-label="desc"><p>终止颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#333; color: #fff">#333</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$deg</code></th><td data-label="desc"><p>渐变旋转角度</p></td><td data-label="type"><code>Degree</code></td><td data-label="default"><code>45deg</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-percent</code></th><td data-label="desc"><p>起始百分比</p></td><td data-label="type"><code>Percentage</code></td><td data-label="default"><code>0%</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-percent</code></th><td data-label="desc"><p>结束百分比</p></td><td data-label="type"><code>Percentage</code></td><td data-label="default"><code>100%</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-gradient-horizontal-three-colors"><h3 class="item__heading"><a class="item__name" href="#mixin-m-gradient-horizontal-three-colors">m-gradient-horizontal-three-colors</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-gradient-horizontal-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) { 
+    background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
+    background-repeat: no-repeat;
+ }" data-collapsed="@mixin m-gradient-horizontal-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) { ... }"><code>@mixin m-gradient-horizontal-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>三段水平颜色渐变</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-color</code></th><td data-label="desc"><p>开始颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#00b3ee; color: #000">#00b3ee</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$mid-color</code></th><td data-label="desc"><p>中间色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#7a43b6; color: #fff">#7a43b6</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color-stop</code></th><td data-label="desc"><p>中间色位置百分比</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>50%</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-color</code></th><td data-label="desc"><p>终止颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#c3325f; color: #fff">#c3325f</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-gradient-vertical-three-colors"><h3 class="item__heading"><a class="item__name" href="#mixin-m-gradient-vertical-three-colors">m-gradient-vertical-three-colors</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) { 
+    background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
+    background-repeat: no-repeat;
+ }" data-collapsed="@mixin m-gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) { ... }"><code>@mixin m-gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>三段垂直颜色渐变</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$start-color</code></th><td data-label="desc"><p>开始颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#00b3ee; color: #000">#00b3ee</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$mid-color</code></th><td data-label="desc"><p>中间色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#7a43b6; color: #fff">#7a43b6</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color-stop</code></th><td data-label="desc"><p>中间色位置百分比</p></td><td data-label="type"><code>Percent</code></td><td data-label="default"><code>50%</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end-color</code></th><td data-label="desc"><p>终止颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#c3325f; color: #fff">#c3325f</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-gradient-radial"><h3 class="item__heading"><a class="item__name" href="#mixin-m-gradient-radial">m-gradient-radial</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-gradient-radial($inner-color: #555, $outer-color: #333) { 
+    background-image: radial-gradient(circle, $inner-color, $outer-color);
+    background-repeat: no-repeat;
+ }" data-collapsed="@mixin m-gradient-radial($inner-color: #555, $outer-color: #333) { ... }"><code>@mixin m-gradient-radial($inner-color: #555, $outer-color: #333) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>放射渐变</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$inner-color</code></th><td data-label="desc"><p>内部颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#555; color: #fff">#555</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$outer-color</code></th><td data-label="desc"><p>外部颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#333; color: #fff">#333</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-gradient-striped"><h3 class="item__heading"><a class="item__name" href="#mixin-m-gradient-striped">m-gradient-striped</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) { 
+  background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+ }" data-collapsed="@mixin m-gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) { ... }"><code>@mixin m-gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>条纹</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>条纹颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:rgba(255,255,255,.15); color: #000">rgba(255,255,255,.15)</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$angle</code></th><td data-label="desc"><p>条纹旋转角度</p></td><td data-label="type"><code>Degree</code></td><td data-label="default"><code>45deg</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="ui"><div class="container">页面UI相关</div></h1><section class="main__sub-section" id="ui-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-m-btn"><h3 class="item__heading"><a class="item__name" href="#mixin-m-btn">m-btn</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-btn($size: normal, $type: default, $basic: false) { 
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 6px;
+    height: 30px;
+    border: 0 none;
+    border-radius: 2px;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 30px;
+    transition: background 1s ease;
+    -webkit-appearance: none;
+    background-color: $m-primary-color;
+    &amp;[disabled] , &amp;.disabled {
+        pointer-events: none;
+        background-color: #EBEBF0;
+        color: #D2D2D2;
+    }
+    outline: none;
+
+    @if $size == &quot;normal&quot; {
+        min-width: 150px;
+        height: 42px;
+        font-size: 20px;
+        line-height: 42px;
+    } @else if $size == &quot;fullwidth&quot; {
+        display: block;
+        box-sizing: border-box;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    @if $basic {
+        background-color: #FFF;
+        @if $type == &quot;primary&quot; {
+            border: 1px solid $m-primary-color;
+            color: $m-primary-color;
+        } @else if $type == &quot;default&quot; {
+            border: 1px solid #DDD;
+            color: #666;
+            &amp;:active {
+                background-color: #F8F8F8;
+                border: 1px solid #D8D8D8;
+            }
+        } @else if $type == &quot;emphasize&quot; {
+            border: 1px solid $m-emphasize-color;
+            color: $m-emphasize-color;
+        // } @else if $type == &quot;info&quot; {
+
+        }
+    } @else {
+        @if $type == &quot;primary&quot; {
+            background-color: $m-primary-color;
+        } @else if $type == &quot;default&quot; {
+            background-color: #FFF;
+            color: #666;
+        } @else if $type == &quot;emphasize&quot; {
+            background-color: $m-emphasize-color;
+            &amp;:active {
+                background-color: #E5513D;
+            }
+        // } @else if $type == &quot;info&quot; {
+
+        }
+    }
+ }" data-collapsed="@mixin m-btn($size: normal, $type: default, $basic: false) { ... }"><code>@mixin m-btn($size: normal, $type: default, $basic: false) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>按钮</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>按钮尺寸，可选值: <code>normal</code>|<code>small</code>|<code>fullwidth</code></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>normal</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$type</code></th><td data-label="desc"><p>类型，可选值：<code>default</code>|<code>emphasize</code>|<code>primary</code></p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>default</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$basic</code></th><td data-label="desc"><p>基础样式按钮</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>false</code></td></tr></tbody></table><h3 class="item__sub-heading">TODO's</h3><ul class="list-unstyled"><li><p>增加多种尺寸</p></li></ul></section><section class="main__item container item" id="mixin-m-loading"><h3 class="item__heading"><a class="item__name" href="#mixin-m-loading">m-loading</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-loading() { 
+    height: 3.125rem;
+    text-align: center;
+    line-height: 3.125rem;
+    &amp;&gt;.loading-icon {
+        @extend %m-loading-icon;
+    }
+    &amp;&gt;.loading-txt {
+        color: rgba(32, 35, 37, 0.6);
+        font-size: 0.8125rem;
+    }
+ }" data-collapsed="@mixin m-loading() { ... }"><code>@mixin m-loading() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>区块loading方案</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section><section class="main__sub-section" id="ui-placeholder"><h2 class="main__heading--secondary"><div class="container">placeholders</div></h2><section class="main__item container item" id="placeholder-m-page-loading"><h3 class="item__heading"><a class="item__name" href="#placeholder-m-page-loading">m-page-loading</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%m-page-loading { 
+    height: 4.8125rem;
+    width: 4.8125rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: rgba(0, 0, 0, 0.8) url(data:image/gif;base64,R0lGODlhSgBKAMQfAJubm7i4uN3d3bKystPT05OTk76+voyMjIKCgsTExFtbW3t7e8nJyXNzc1JSUmxsbGJiYkNDQ0tLS6urq9jY2OHh4T09PTk5OTU1Naenp6GhoeXl5YiIiMzMzGZmZjMzMyH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFBNjI3MEIzMzYzOTExRTRBREM5QjA5MDg4MTA2QzYxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFBNjI3MEI0MzYzOTExRTRBREM5QjA5MDg4MTA2QzYxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUE2MjcwQjEzNjM5MTFFNEFEQzlCMDkwODgxMDZDNjEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUE2MjcwQjIzNjM5MTFFNEFEQzlCMDkwODgxMDZDNjEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1l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) no-repeat center;
+    margin: -2.4375rem 0 0 -2.4375rem;
+    -webkit-background-size: 2.3125rem;
+    -webkit-border-radius: 0.625rem; 
+ }" data-collapsed="%m-page-loading { ... }"><code>%m-page-loading { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>页面loading</p></div></section><section class="main__item container item" id="placeholder-m-loading-icon"><h3 class="item__heading"><a class="item__name" href="#placeholder-m-loading-icon">m-loading-icon</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%m-loading-icon { 
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: url(data:image/gif;base64,R0lGODlhKAAoAMQfAPHx8fz8/HFxcYyMjP7+/rGxsfj4+Pr6+tXV1fb29qGhofT09NDQ0Nra2sPDw729vcjIyOjo6Ozs7N/f36enp5ubm7i4uL6+vtjY2N3d3eDg4OXl5eLi4mZmZszMzP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFBNjI3MEI3MzYzOTExRTRBREM5QjA5MDg4MTA2QzYxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFBNjI3MEI4MzYzOTExRTRBREM5QjA5MDg4MTA2QzYxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUE2MjcwQjUzNjM5MTFFNEFEQzlCMDkwODgxMDZDNjEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUE2MjcwQjYzNjM5MTFFNEFEQzlCMDkwODgxMDZDNjEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1l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) no-repeat;
+    -webkit-background-size: 1.25rem;
+    vertical-align: middle; 
+ }" data-collapsed="%m-loading-icon { ... }"><code>%m-loading-icon { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>区块独立loading</p></div></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">其他</div></h1><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="variable-m-root-font-size"><h3 class="item__heading"><a class="item__name" href="#variable-m-root-font-size">m-root-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$m-root-font-size: 64 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>640宽度下的字号,用于rem计算, 要加default,这样可被业务线定义覆盖</p></div><h3 class="item__sub-heading">Type</h3><p><code>Int</code></p></section></section><section class="main__sub-section" id="undefined-placeholder"><h2 class="main__heading--secondary"><div class="container">placeholders</div></h2><section class="main__item container item" id="placeholder-clearfix"><h3 class="item__heading"><a class="item__name" href="#placeholder-clearfix">clearfix</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%clearfix { 
+    &amp;::after {
+        content: &quot;&quot;;
+        display: table;
+        clear: both;
+    }
+ }" data-collapsed="%clearfix { ... }"><code>%clearfix { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>清除浮动</p></div></section><section class="main__item container item" id="placeholder-m-fig-placeholder"><h3 class="item__heading"><a class="item__name" href="#placeholder-m-fig-placeholder">m-fig-placeholder</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%m-fig-placeholder { 
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAABkCAMAAACfFZZFAAAAqFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8j1z1tAAAAN3RSTlMA4dCQwLBAEA1Q8IBwYCAw+6AFAjr4uapX6cVmCUwmASxHGBN4yu3dhrSbHNpzXfTUlms0jH2kPHcXDgAACbxJREFUeNrs22t36UAYhuE3CKFKTg4hEQRVLaXVPv//n+3d7hyYSDNJxE67cn1zWJaZezGRCSqVSqVSqVQqlUqlUqlUKpVKpVLAlP4xKUyVXCplp5qqTaU4U3g+iKUZcBkmZTYC5If+ZjErs3ynDo+sEqMBn05ZDeFpUn6GtUrY8vF9Sn85GzGJjxmFmdVlJaWaeBg/JQiCRnSQ7JM4X8Ezo9yoMiKIDtErkpE7FHJENjW9GEG0PjxL++u1rSavN+ImIdKzQ23wih71Elmt7SIEObLffn3wW2cIElCuEqSCzNYFCLKAT0k+MOMqQXpmQYLg7QpB1s1vWE/8PYRG8oG1sgQJ6LOCBBlQ2LzrGsOndwMTNQgST7boG+rh5Jkz+m9BLFssRpCeSSxdRgyhkyAIahTtaYTAglyjvIPU6Z/1yeKlDdfVb1Xg+7w5/TaI/PrUONeCb8881FkjoBPrHrGOSYJUKIo2biHwYZNrd6sgNbjkBsWqwkeXnSYjVuu7GXmGb5gmiEJEq8xBZhWc6Kvk21UEXpUMQSQ5+BRfOch9siCP8I3TBqlmC2LuljjVNyln4SDNYBb+cxARvjaxhnxBpH76IE7zo4UzA5VY+QfZwCU7RQ4yb3EFIbvevuMxZuZloezBercpLPcgAlyPVOQgpD/HB0nPQYgxo/yFg0zh2ZFrUj+jT9QiBCGSGp/28Ewb50zKoAfGwKEI+QbZwtWT6IutgNUbvZoFCMK+foeu6AFnnmcUIe8gNfbXsYVLHrpFCSLkE2SEE8JYpRthg0gye+i/xkWtSfIgK4GFgCywXm4SRJ3U28qD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);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #e3edf4;
+ }" data-collapsed="%m-fig-placeholder { ... }"><code>%m-fig-placeholder { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>图片默认占位图</p></div></section><section class="main__item container item" id="placeholder-m-reset-text"><h3 class="item__heading"><a class="item__name" href="#placeholder-m-reset-text">m-reset-text</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%m-reset-text { 
+    font-family: sans-serif;
+    //do NOT reset font-size.
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    line-height: 2;
+    text-align: left; // Fallback for where `start` is not supported
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+ }" data-collapsed="%m-reset-text { ... }"><code>%m-reset-text { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>重置文本样式</p></div></section></section><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-m-border-radius"><h3 class="item__heading"><a class="item__name" href="#mixin-m-border-radius">m-border-radius</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-border-radius($radius) { 
+    @if length($radius) != 1 {
+        $i:1;
+        @each $position in (topleft, topright, bottomright, bottomright) {
+            -moz-border-radius-#{$position}:nth($radius, $i);
+            $i:$i+1;
+        }
+        -webkit-border-radius:nth($radius, 1) nth($radius, 2) nth($radius, 3) nth($radius, 4);
+        border-radius: nth($radius, 1) nth($radius, 2) nth($radius, 3) nth($radius, 4);
+    } @else {
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        border-radius: $radius;
+    }
+ }" data-collapsed="@mixin m-border-radius($radius) { ... }"><code>@mixin m-border-radius($radius) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置圆角-4个角</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$radius</code></th><td data-label="desc"><p>弧度</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-border-top-radius"><h3 class="item__heading"><a class="item__name" href="#mixin-m-border-top-radius">m-border-top-radius</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-border-top-radius($radius) { 
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+ }" data-collapsed="@mixin m-border-top-radius($radius) { ... }"><code>@mixin m-border-top-radius($radius) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置圆角-上边2个角</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$radius</code></th><td data-label="desc"><p>弧度</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-border-right-radius"><h3 class="item__heading"><a class="item__name" href="#mixin-m-border-right-radius">m-border-right-radius</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-border-right-radius($radius) { 
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+ }" data-collapsed="@mixin m-border-right-radius($radius) { ... }"><code>@mixin m-border-right-radius($radius) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置圆角-右边2个个角</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$radius</code></th><td data-label="desc"><p>弧度</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-border-bottom-radius"><h3 class="item__heading"><a class="item__name" href="#mixin-m-border-bottom-radius">m-border-bottom-radius</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-border-bottom-radius($radius) { 
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+ }" data-collapsed="@mixin m-border-bottom-radius($radius) { ... }"><code>@mixin m-border-bottom-radius($radius) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置圆角-下边2个角</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$radius</code></th><td data-label="desc"><p>弧度</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-border-left-radius"><h3 class="item__heading"><a class="item__name" href="#mixin-m-border-left-radius">m-border-left-radius</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-border-left-radius($radius) { 
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+ }" data-collapsed="@mixin m-border-left-radius($radius) { ... }"><code>@mixin m-border-left-radius($radius) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置圆角-左边2个角</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$radius</code></th><td data-label="desc"><p>弧度</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-box-sizing"><h3 class="item__heading"><a class="item__name" href="#mixin-m-box-sizing">m-box-sizing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-box-sizing($type: border-box) { 
+  box-sizing: $type;
+  -webkit-box-sizing: $type;
+ }" data-collapsed="@mixin m-box-sizing($type: border-box) { ... }"><code>@mixin m-box-sizing($type: border-box) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置元素盒模型，默认为border-box</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$type</code></th><td data-label="desc"><p>类型</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>border-box</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-center-block"><h3 class="item__heading"><a class="item__name" href="#mixin-m-center-block">m-center-block</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-center-block() { 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }" data-collapsed="@mixin m-center-block() { ... }"><code>@mixin m-center-block() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置元素居中</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="mixin-m-r1b"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1b">m-r1b</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1b($color: #D5D5D5) { 
+  position:relative;
+  &amp;::after {
+    position: absolute;
+    content: &quot;&quot;;
+    top: 0;
+    left: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color;
+    pointer-events:none;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    @if $radius!=0{
+      border-radius: $radius;
+      -webkit-border-radius: $radius;
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    &amp;::after{
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(.5);
+      transform: scale(.5);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 1.5) {
+    &amp;::after {
+      width: 150%;
+      height: 150%;
+      -webkit-transform: scale(.6666);
+      transform: scale(.6666);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 3) {
+    &amp;::after {
+      width: 300%;
+      height: 300%;
+      -webkit-transform: scale(.3333);
+      transform: scale(.3333);
+    }
+  }
+ }" data-collapsed="@mixin m-r1b($color: #D5D5D5) { ... }"><code>@mixin m-r1b($color: #D5D5D5) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过before，after实现的1px边框-4个边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>色值</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1bl"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1bl">m-r1bl</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1bl($color: #D5D5D5) { 
+  position:relative;
+  &amp;::before {
+    pointer-events:none;
+    position: absolute;
+    content: &quot;&quot;;
+    width: 1px;
+    background: $color;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    &amp;::before{
+      -webkit-transform: scaleX(.5);
+      transform: scaleX(.5);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 1.5) {
+    &amp;::before {
+      -webkit-transform: scaleX(.6666);
+      transform: scaleX(.6666);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 3) {
+    &amp;::before {
+      -webkit-transform: scaleX(.3333);
+      transform: scaleX(.3333);
+    }
+  }
+ }" data-collapsed="@mixin m-r1bl($color: #D5D5D5) { ... }"><code>@mixin m-r1bl($color: #D5D5D5) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过before，after实现的1px边框-左边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>色值</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1br"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1br">m-r1br</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1br($color: #D5D5D5) { 
+  position:relative;
+  &amp;::after {
+    pointer-events:none;
+    position: absolute;
+    content: &quot;&quot;;
+    width: 1px;
+    background: $color;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    &amp;::after{
+      -webkit-transform: scaleX(.5);
+      transform: scaleX(.5);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 1.5) {
+    &amp;::after {
+      -webkit-transform: scaleX(.6666);
+      transform: scaleX(.6666);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 3) {
+    &amp;::after {
+      -webkit-transform: scaleX(.3333);
+      transform: scaleX(.3333);
+    }
+  }
+ }" data-collapsed="@mixin m-r1br($color: #D5D5D5) { ... }"><code>@mixin m-r1br($color: #D5D5D5) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过before，after实现的1px边框-右边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>色值</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1bt"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1bt">m-r1bt</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1bt($color: #D5D5D5) { 
+  position:relative;
+  &amp;::before {
+    pointer-events:none;
+    position: absolute;
+    content: &quot;&quot;;
+    height: 1px;
+    background: $color;
+    left: 0;
+    right: 0;
+    top:0;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    &amp;::before{
+      -webkit-transform: scaleY(.5);
+      transform: scaleY(.5);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 1.5) {
+    &amp;::before {
+      -webkit-transform: scaleY(.6666);
+      transform: scaleY(.6666);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 3) {
+    &amp;::before {
+      -webkit-transform: scaleY(.3333);
+      transform: scaleY(.3333);
+    }
+  }
+ }" data-collapsed="@mixin m-r1bt($color: #D5D5D5) { ... }"><code>@mixin m-r1bt($color: #D5D5D5) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过before，after实现的1px边框-上边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>色值</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1bb"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1bb">m-r1bb</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1bb($color: #D5D5D5) { 
+  position:relative;
+  &amp;::after {
+    pointer-events:none;
+    position: absolute;
+    content: &quot;&quot;;
+    height: 1px;
+    background: $color;
+    left: 0;
+    right: 0;
+    bottom:0;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    &amp;::after{
+      -webkit-transform: scaleY(.5);
+      transform: scaleY(.5);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 1.5) {
+    &amp;::after {
+      -webkit-transform: scaleY(.6666);
+      transform: scaleY(.6666);
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 3) {
+    &amp;::after {
+      -webkit-transform: scaleY(.3333);
+      transform: scaleY(.3333);
+    }
+  }
+ }" data-collapsed="@mixin m-r1bb($color: #D5D5D5) { ... }"><code>@mixin m-r1bb($color: #D5D5D5) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过before，after实现的1px边框-下边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>色值</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1bt-bg"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1bt-bg">m-r1bt-bg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1bt-bg($color: #D5D5D5, $bgColor: 透明) { 
+  background:$bgColor -webkit-linear-gradient(top, $color, $color 50%, transparent 50%, transparent 100%) left top no-repeat;
+  -webkit-background-size: 100% 1px;
+ }" data-collapsed="@mixin m-r1bt-bg($color: #D5D5D5, $bgColor: 透明) { ... }"><code>@mixin m-r1bt-bg($color: #D5D5D5, $bgColor: 透明) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过background-image实现的1px边框-上边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>边框颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgColor</code></th><td data-label="desc"><p>背景颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>透明</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1bb-bg"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1bb-bg">m-r1bb-bg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1bb-bg($color: #D5D5D5, $bgColor: 透明) { 
+  background:$bgColor -webkit-linear-gradient(bottom, $color, $color 50%, transparent 50%, transparent 100%) left bottom no-repeat;
+  -webkit-background-size: 100% 1px;
+ }" data-collapsed="@mixin m-r1bb-bg($color: #D5D5D5, $bgColor: 透明) { ... }"><code>@mixin m-r1bb-bg($color: #D5D5D5, $bgColor: 透明) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过background-image实现的1px边框-下边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>边框颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgColor</code></th><td data-label="desc"><p>背景颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>透明</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1bl-bg"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1bl-bg">m-r1bl-bg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1bl-bg($color: #D5D5D5, $bgColor: 透明) { 
+  background:$bgColor -webkit-linear-gradient(left, $color, $color 50%, transparent 50%, transparent 100%) left top no-repeat;
+  -webkit-background-size: 1px 100%;
+ }" data-collapsed="@mixin m-r1bl-bg($color: #D5D5D5, $bgColor: 透明) { ... }"><code>@mixin m-r1bl-bg($color: #D5D5D5, $bgColor: 透明) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过background-image实现的1px边框-左边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>边框颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgColor</code></th><td data-label="desc"><p>背景颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>透明</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1br-bg"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1br-bg">m-r1br-bg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1br-bg($color: #D5D5D5, $bgColor: 透明) { 
+  background:$bgColor -webkit-linear-gradient(right, $color, $color 50%, transparent 50%, transparent 100%) right top no-repeat;
+  -webkit-background-size: 1px 100%;
+ }" data-collapsed="@mixin m-r1br-bg($color: #D5D5D5, $bgColor: 透明) { ... }"><code>@mixin m-r1br-bg($color: #D5D5D5, $bgColor: 透明) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过background-image实现的1px边框-右边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>边框颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgColor</code></th><td data-label="desc"><p>背景颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>透明</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-r1b-bg"><h3 class="item__heading"><a class="item__name" href="#mixin-m-r1b-bg">m-r1b-bg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-r1b-bg($color: #D5D5D5, $bgColor: 透明) { 
+  background-color:$bgColor;
+  background-image: -webkit-linear-gradient(top, $color, $color 50%, transparent 50%, transparent 100%), -webkit-linear-gradient(right, $color, $color 50%, transparent 50%, transparent 100%), -webkit-linear-gradient(bottom, $color, $color 50%, transparent 50%, transparent 100%), -webkit-linear-gradient(left, $color, $color 50%, transparent 50%, transparent 100%);
+  background-size: 100% 1px, 1px 100%;
+  background-repeat: no-repeat;
+  background-position: top, right top, bottom, left top;
+ }" data-collapsed="@mixin m-r1b-bg($color: #D5D5D5, $bgColor: 透明) { ... }"><code>@mixin m-r1b-bg($color: #D5D5D5, $bgColor: 透明) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>通过background-image实现的1px边框-4边</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>边框颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#D5D5D5; color: #000">#D5D5D5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bgColor</code></th><td data-label="desc"><p>背景颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>透明</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-resizable"><h3 class="item__heading"><a class="item__name" href="#mixin-m-resizable">m-resizable</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-resizable($direction: vertical) { 
+    resize: $direction;
+    overflow: auto; 
+ }" data-collapsed="@mixin m-resizable($direction: vertical) { ... }"><code>@mixin m-resizable($direction: vertical) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>可调整大小</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>大小调整方向，options: <code>horizontal</code>| <code>vertical</code>|<code>both</code></p></td><td data-label="type"><code></code></td><td data-label="default"><code>vertical</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-size"><h3 class="item__heading"><a class="item__name" href="#mixin-m-size">m-size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-size($width, $height: $width) { 
+    width: $width;
+    height: $height;
+ }" data-collapsed="@mixin m-size($width, $height: $width) { ... }"><code>@mixin m-size($width, $height: $width) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置元素长宽尺寸</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>宽度</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$height</code></th><td data-label="desc"><p>高度，如果长宽一样，只设置width即可</p></td><td data-label="type"><code></code></td><td data-label="default"><code>$width</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-normal-tag"><h3 class="item__heading"><a class="item__name" href="#mixin-m-normal-tag">m-normal-tag</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-normal-tag($color: #009ff0, $radius: 2px) { 
+  @extend %m-common-tag;
+  @include m-r1b($color, $radius);
+  color:$color;
+ }" data-collapsed="@mixin m-normal-tag($color: #009ff0, $radius: 2px) { ... }"><code>@mixin m-normal-tag($color: #009ff0, $radius: 2px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>普通商品标签样式</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>边框和文字颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#009ff0; color: #fff">#009ff0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$radius</code></th><td data-label="desc"><p>弧度</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>2px</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-red-tag"><h3 class="item__heading"><a class="item__name" href="#mixin-m-red-tag">m-red-tag</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-red-tag($color: #ff5b45, $radius: 2px) { 
+  @extend %m-common-tag;
+  @include m-r1b($color, $radius);
+  color:$color;
+ }" data-collapsed="@mixin m-red-tag($color: #ff5b45, $radius: 2px) { ... }"><code>@mixin m-red-tag($color: #ff5b45, $radius: 2px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>与数量或金额相关商品标签样式</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>边框和文字颜色</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#ff5b45; color: #000">#ff5b45</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$radius</code></th><td data-label="desc"><p>弧度</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>2px</code></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-line-clamp-ellipsis"><h3 class="item__heading"><a class="item__name" href="#mixin-m-line-clamp-ellipsis">m-line-clamp-ellipsis</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-line-clamp-ellipsis($lineCount) { 
+	overflow : hidden;
+  	text-overflow: ellipsis;
+  	display: -webkit-box;
+    word-break: break-all;
+  	-webkit-line-clamp: $lineCount;
+  	-webkit-box-orient: vertical;
+ }" data-collapsed="@mixin m-line-clamp-ellipsis($lineCount) { ... }"><code>@mixin m-line-clamp-ellipsis($lineCount) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>多行文本截断(ellipsis)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lineCount</code></th><td data-label="desc"><p>行数</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section><section class="main__item container item" id="mixin-m-line-clamp-fade"><h3 class="item__heading"><a class="item__name" href="#mixin-m-line-clamp-fade">m-line-clamp-fade</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin m-line-clamp-fade($lineCount, $lineHeight, $fadeWidth) { 
+  	position: relative;
+  	height: $lineCount*$lineHeight;
+	 overflow: hidden;
+   line-height: $lineHeight;
+	&amp;:after {
+		content: &quot;&quot;;
+  		text-align: right;
+  		position: absolute;
+  		bottom: 0;
+  		right: 0;
+  		width: $fadeWidth;
+  		height: $lineHeight;
+  		background: linear-gradient(to right, rgba( $color, 0 ), rgba($color, 1) 50%);
+	}
+ }" data-collapsed="@mixin m-line-clamp-fade($lineCount, $lineHeight, $fadeWidth) { ... }"><code>@mixin m-line-clamp-fade($lineCount, $lineHeight, $fadeWidth) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>多行文本截断(fade)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lineCount</code></th><td data-label="desc"><p>行数</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$lineHeight</code></th><td data-label="desc"><p>行高，经计算的行高</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$fadeWidth</code></th><td data-label="desc"><p>渐变的宽度</p></td><td data-label="type"><code></code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">Mpicss</span><!-- Version --> <span class="project-info__version">- v2.0.30</span><!-- License --></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

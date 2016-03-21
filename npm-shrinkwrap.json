@@ -1,0 +1,11 @@
+{
+  "name": "h5-snake",
+  "version": "0.1.0",
+  "dependencies": {
+    "classnames": {
+      "version": "2.2.3",
+      "from": "classnames@>=2.2.3 <2.3.0",
+      "resolved": "http://registry.npm.alibaba-inc.com/classnames/download/classnames-2.2.3.tgz"
+    }
+  }
+}

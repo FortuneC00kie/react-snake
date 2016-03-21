@@ -1,0 +1,22 @@
+{
+	"name": "css",
+	"main": ["scss/_mpi-mixins.scss"],
+	"description": "mpi基础css框架",
+	"authors": [
+		"懂象 <siwen.dsw@alibaba-inc.com> (http://dswwsd.net/)"
+	],
+	"homepage" : "http://docs.alitrip.net/css/",
+	"ignore": [
+		".jshintrc",
+	    "node_modules",
+	    "bower_components",
+	    "components",
+	    "test",
+	    "demo",
+	    "tests"
+	],
+	"dependencies": {
+	},
+	"devDependencies": {
+	}
+}

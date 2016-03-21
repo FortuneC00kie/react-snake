@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/**
+ * -----------
+ * Module Styles
+ * -----------
+ */
+.snakeNode{
+  border:1px solid #666;
+  background-color: #ccc;
+  position: absolute;
+  z-index:100;
+  overflow: hidden;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "h5-snake",
+  "version": "0.1.0",
+  "authors": [
+    "舒克<shuke.cl@taobao.com>"
+  ],
+  "description": "Components for project h5-snake",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "base": "mpi/base",
+    "css": "mpi/css"
+  }
+}
+
+

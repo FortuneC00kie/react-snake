@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@import "./r1b";
+@import "./border-radius";
+
+%m-common-tag{
+  display: inline-block;
+  font-size:rem(10);
+  padding:0 rem(3);
+  margin-right:rem(6);
+  height:rem(15);
+  line-height: rem(15);
+}
+
+/// 普通商品标签样式
+/// @param {Color} $color [#009ff0] - 边框和文字颜色
+/// @param {Color} $radius [2px] - 弧度
+@mixin m-normal-tag($color:#009ff0, $radius:2px){
+  @extend %m-common-tag;
+  @include m-r1b($color, $radius);
+  color:$color;
+}
+
+/// 与数量或金额相关商品标签样式
+/// @param {Color} $color [#ff5b45] - 边框和文字颜色
+/// @param {Color} $radius [2px] - 弧度
+@mixin m-red-tag($color:#ff5b45, $radius:2px){
+  @extend %m-common-tag;
+  @include m-r1b($color, $radius);
+  color:$color;
+}

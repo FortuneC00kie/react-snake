@@ -1,0 +1,31 @@
+{
+  "name": "css",
+  "main": [
+    "scss/_mpi-mixins.scss"
+  ],
+  "description": "mpi基础css框架",
+  "authors": [
+    "懂象 <siwen.dsw@alibaba-inc.com> (http://dswwsd.net/)"
+  ],
+  "homepage": "http://docs.alitrip.net/css/",
+  "ignore": [
+    ".jshintrc",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "demo",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "_release": "0e5a65c75c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "0e5a65c75cc337efebeef0aa1d222a7bc7abdd78"
+  },
+  "_source": "http://gitlab.alibaba-inc.com/mpi/css.git",
+  "_target": "*",
+  "_originalSource": "mpi/css"
+}

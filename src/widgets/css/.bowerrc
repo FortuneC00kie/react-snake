@@ -1,0 +1,10 @@
+{
+    "analytics": false,
+    "directory": "./components",
+    "shorthand_resolver":"http://gitlab.alibaba-inc.com/{{{owner}}}/{{{package}}}.git",
+	"shallowCloneHosts": [
+	    "gitlab.alibaba-inc.com"
+    ],
+    "color": true,
+    "timeout": 60000
+}

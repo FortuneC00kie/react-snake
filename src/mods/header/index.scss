@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/**
+ * Import MPI Mixins
+ */
+@import "~css/scss/mpi-mixins";
+
+/**
+ * -----------
+ * Module Styles
+ * -----------
+ */
+.root {
+  background: #fff;
+
+  &.highlighted {
+    background: yellow;
+  }
+}
+
+.title {
+  font-size: rem(24);
+  text-align: center;
+  padding: 2%;
+}
+
+.subTitle {
+  font-size: rem(16);
+  text-align: center;
+  border-top: 1px solid #999;
+  padding: 2%;
+  color: #999;
+}

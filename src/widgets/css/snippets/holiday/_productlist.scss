@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+@import "../../scss/variables";
+@import "../../scss/mpi-mixins";
+
+// 方便未来px2rem转换
+@function _rem($value){
+  $isRem: false;
+  @if $isRem {
+    @return rem($value);
+  }@else{
+    @return $value+px;
+  }
+}
+
+%product-list{
+  .item {
+    padding: _rem(10) 0 0 _rem(10);
+    display: -webkit-box;
+    background: #fff;
+    &:last-child {
+      .item-info {
+        background: none;
+      }
+    }
+    .pic-wrap {
+      background: #e3edf4 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAAAolBMVEUAAAD1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+Pr1+PogRYN7AAAANXRSTlMAzGbx0t38+LwD9UvHeC+YGu+oC+aggSrZsyQQ6wfCjYg+1Lk4cWBXMx8W4a1cUzyTa0B8RfIT/fUAAASfSURBVHja7d2HsppAFIDhA1xApEovtth7vef9Xy2TSWbuTWR3BBdYJ/s9gPOrIFtQQRAEQRAEQRAELiXLg6rr4wW8jc1Uxd+ULbyFJE7xywT45y0l/IsFvHMOOv5jD3wzJho+GADfXCyhANdyfMPo+ztG++8YPX7HaOkdoz9EdDkRLaIpRLSIphDRIrpZhueYx2Xs+j0rDftYSkutue9Obfl0c7wRdMbIP1exm81CrExJrYMbX01nB20JNmvb7akaMqCr4yg+nj1ozu4mX3ohNkCf+fE6GQFTRrKezofYMC092J8FsJAfL1Yf25P6y4UB9RlnOxtiB5RsuakZvt5jhwaHE1S3wq5lI6hoNMDOuVDRGbuneVCNiRxYvWO0LaLLieg60Wepjj6W0aSaVkDxv81cRPRTRLSIphDRIppCRItoChEtoilEtIimENEimkJEi2iKtqKLALiyS24neRlfomz8sVeQSBmqs1/7tpN4eTQXeQHt8xbraxxlUqhjTVr4kUXT62nhQdN2i+Pdnac6MqSnc9deOwEwN0pOdmQNsEHqfCL/KIANz7T9mY4tUQ9304NX7My4k+3PMLN/BFDDVo5S7JBmTc0CKjEt5IA2X1Q47XzkhHaCZ0XIjb4Hz1kgR6bwHBc5IsFzxsgR5emxGk9ENIGIrhB9kqsbI4m+lF8CjZGRSAZOXZHIBU5RmucG8InSbBXApyUSzXbAJxuJ9h7w6Y5Ewxz4FCOR4gCfppRmXn9OYEJpPgOf3OrNQb5JPAM6Y0SU5h/wqFj5If6iW1MHOmH4SNQvac6jPn4zvkH7RodKzcFFw3/4BbRslFVqPu/xUZpDq4JepWZZxzJhq9XBuFLzHQlmAbSmsCo1r5FoAm0ppErNkPSRRMuhHbtZheavlzr0Y3l1nVgafneBVngptbmUnX5dTbYTHb8MDWjBVqU03+AZjopfNtC8fM9gjOR9exApyqyZmkqWP5EdA5qQhEg0WMCzHB1L9TO5ANacIRINN0zG4f0oAaY2AyQKE6jA05BIi3bAzlmp0VxnDXx4AlZufSTa51DNBakmBjBhUprVbY3JJdVhxKRZR6J0C1VdEOl8eN2J0jzz6k0v6Wx41VpDIqnOyf6pI+JQ6vXGMw1LaRt4zZHWXEAd+dX882RHN1/HEpIBr1hpDa+LOh9Y4thU8zhobvo2a6i5FwAbRYiPbo0cz/MAWDFZbn2Y2qtfR6+/EbiHenKlxlWL2eL8FuoIJCTyDWDpEx+dWK/lRgYw5bC6Kjpae3ttP1gti8yRRPGAsSOjj48FEsXAmouPIqjOR6IEGAsG+OgClRU6EhnA2J3R+7lGsi2wtdGxhMx2oH5n3BximTNUZiGZbgI7xlXBMnoAlQ2RQoscYGLk2CmWm0N1OtIpUu87Syr1oZYLB78hmVwrultKAHUOj3bRL+LvcfumsoMaYuzUEupIsEs9A2o5YGfq30q07WNXBs4LY9yOhA7Ut8ROSFt4xUrH1mmXEbwmGWPLpAW8zuxhiywT2Mjtno5tmE0TYMjYrOIok1R1OBhoyJwy/Mim6zf5ix1BEARBEARBeGs/Aa79IjRhT5asAAAAAElFTkSuQmCC) no-repeat center;
+      -webkit-background-size: _rem(50) auto;
+      display: -webkit-box;
+      width: _rem(80);
+      height: _rem(80);
+      margin-right: _rem(10);
+      .lazyimg {
+        display: block;
+        width: _rem(80);
+        height: _rem(80);
+        background-size: cover;
+        -webkit-background-size: cover;
+      }
+    }
+
+    .item-info {
+      @include m-r1bb-bg(rgba(32, 35, 37, .15),#fff);
+      padding-right: _rem(10);
+      padding-bottom: _rem(10);
+      min-height: _rem(80);
+      display: -webkit-box;
+      -webkit-box-flex: 1;
+      -webkit-box-orient: vertical;
+      -webkit-box-pack: justify;
+      background-color: transparent;
+    }
+    .item-title {
+      @include m-line-clamp-ellipsis(2);
+      font-size: _rem(14);
+      line-height: _rem(16);
+      -webkit-box-orient: vertical;
+      color: #666;
+      font-family: Helvetica Neue;
+    }
+    .item-middle {
+      font-size: _rem(12);
+      color: #A5A5A5;
+      margin-top: _rem(5);
+    }
+    .item-tag {
+      margin-top:_rem(5);
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      -webkit-box-align: end;
+      .lt{
+        -webkit-box-flex: 1;
+        overflow: hidden;
+        height:_rem(20);
+        line-height:_rem(15);
+        span {
+          @include m-r1b-bg(#47abef);
+          display: inline-block;
+          padding: 0 _rem(3);
+          margin-bottom:_rem(5);
+          margin-right: _rem(5);
+          height: _rem(17);
+          line-height: _rem(18);
+          color: #47abef;
+          font-size: _rem(10);
+          font-weight: 300;
+          font-family: "Heiti SC";
+          &.phone-discount {
+            @include m-r1b(#2f98e0);
+            color: #fff;
+            background: #2f98e0;
+          }
+        }
+      }
+      .rt{
+        .origin {
+          vertical-align: _rem(-1);
+          color: #A5A5A5;
+          font-family: 'Helvetica Neue';
+          font-size: _rem(12);
+        }
+      }
+    }
+    .item-bottom {
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      -webkit-box-align: end;
+      color: #A5A5A5;
+      font-family: Helvetica Neue;
+      font-size: _rem(12);
+      .lt {
+        -webkit-box-flex: 1;
+        span {
+          @include m-truncation();
+          display: block;
+        }
+      }
+      .rt {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-box-align: end;
+        -webkit-box-pack: end;
+      }
+      .info {
+        -webkit-box-flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .item-discount, .item-price {
+        display: inline-block;
+        margin-bottom: _rem(-2);
+      }
+      .item-price {
+        display: block;
+        margin-left: _rem(5);
+        font-family: 'Helvetica Neue';
+        color: #FF5B45;
+        vertical-align: _rem(-1);
+        font-size: _rem(20);
+        i {
+          font-size: _rem(12);
+        }
+      }
+    }
+  }
+}

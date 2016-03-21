@@ -1,0 +1,44 @@
+{
+  "name": "mpicss",
+  "version": "2.0.30",
+  "description": "去啊无线前端基础UI框架",
+  "author": {
+    "name": "智峰",
+    "email": "yejun.yj@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.alibaba-inc.com/mpi/css"
+  },
+  "keywords": [
+    "clam",
+    "Css"
+  ],
+  "devDependencies": {
+    "clam-util": "",
+    "grunt": "~0.4.1",
+    "grunt-combohtml": "",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-cssmin": "~0.5.0",
+    "grunt-contrib-less": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "",
+    "grunt-exec": "",
+    "grunt-flexcombo": "",
+    "grunt-focus": "~0.1.1",
+    "grunt-inline-assets": "",
+    "grunt-kmc": "~0.1.18",
+    "grunt-mytps": "",
+    "grunt-prompt": "~1.1.0",
+    "grunt-replace": "",
+    "grunt-sass": "1.0.0",
+    "grunt-sassdoc": "^2.0.1",
+    "grunt-tms": "",
+    "grunt-tpl-compiler": "",
+    "jit-grunt": "~0.9.1",
+    "node-sass": "~3.4.2",
+    "sassdoc-theme-flippant": "^0.1.0"
+  },
+  "dependencies": {}
+}

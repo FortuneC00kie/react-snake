@@ -1,0 +1,61 @@
+@charset "UTF-8";
+//// 去啊基础颜色
+
+/// 主色 
+/// @type Color
+/// @group color
+/// @access public
+$m-primary-color: #009FF0;
+
+/// 重点提示色（如金额），可根据业务自行使用
+/// @type Color
+/// @group color
+/// @access public
+$m-emphasize-color: #ff5b45;
+
+/// 浅色文字颜色，仅用于标题\按钮和深色背景中
+/// @type Color
+/// @group color
+/// @access public
+$m-light-txt-color: #fff;
+
+/// 深色文字颜色，标题\输入框标签\输入内容\文本
+/// @type Color
+/// @group color
+/// @access public
+$m-dark-txt-color: #333;
+
+/// tab文字颜色，tab文字、文本
+/// @type Color
+/// @group color
+/// @access public
+$m-tab-txt-color: #666;
+
+/// 次要文字颜色，小标题、说明文字
+/// @type Color
+/// @group color
+/// @access public
+$m-sub-txt-color: #a5a5a5;
+
+/// 提示文字颜色，暗提示
+/// @type Color
+/// @group color
+/// @access public
+$m-hint-txt-color: #ccc;
+
+/// 分割线文字颜色
+/// @type Color
+/// @group color
+/// @access public
+$m-divider-txt-color: #e0e0e0;
+
+/// cell灰色条和背景色
+/// @type Color
+/// @group color
+/// @access public
+$m-cell-bg-color: #f2f3f4;
+
+/// 640宽度下的字号,用于rem计算, 要加default,这样可被业务线定义覆盖
+/// @type int
+/// @access public
+$m-root-font-size: 64 !default;

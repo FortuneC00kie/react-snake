@@ -1,0 +1,27 @@
+{
+
+  // I want to use babel-eslint for parsing!
+  "parser": "babel-eslint",
+
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+
+  "plugins": ["react"],
+
+  "extends": "airbnb",
+
+  "globals": {
+    "__VERSION__": true,
+    "__OFFLINE_TRIP__": true,
+    "__OFFLINE_TAOBAO__": true,
+    "__OFFLINE_ALIPAY__": true
+  },
+
+  "rules": {
+    "comma-dangle": [2, "only-multiline"],
+    "react/jsx-closing-bracket-location": [1, "after-props"],
+    "no-new": 1
+  }
+}

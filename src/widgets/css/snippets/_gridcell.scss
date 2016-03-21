@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@import "../scss/variables";
+@import "../scss/mpi-mixins";
+
+%grid-container{
+  position: relative;
+  .grid-wrap{
+    padding:0 rem(24);
+  }
+  .grid-key{
+    padding-top:rem(24);
+    color: $m-sub-txt-color;
+    font-size:12px;
+    margin-bottom:rem(6);
+  }
+  ul{
+    @extend %clearfix;
+  }
+  .grid-cell{
+    margin-top:rem(12);
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 33.33333333%;
+    padding:0 rem(4);
+    &:nth-child(3n+1){
+      padding-left:0;
+      padding-right:rem(8);
+    }
+    &:nth-child(3n){
+      padding-right:0;
+      padding-left:rem(8);
+    }
+    span{
+      @include m-r1b-bg($m-divider-txt-color,#fff);
+      display: block;
+      height:rem(72);
+      line-height:rem(72);
+      font-size:13px;
+      text-align: center;
+      color:$m-dark-txt-color;
+      &:active{
+        @include m-r1b-bg($m-sub-txt-color,#fff);
+      }
+    }
+  }
+}

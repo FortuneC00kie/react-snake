@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/// 清除浮动
+%clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

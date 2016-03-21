@@ -1,0 +1,77 @@
+{
+  "name": "h5-snake",
+  "version": "0.1.0",
+  "description": "h5-snake based on React",
+  "author": {
+    "name": "舒克",
+    "email": "shuke.cl@taobao.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.alibaba-inc.com/shuke.cl/h5-snake"
+  },
+  "scripts": {
+    "postinstall": "if [ \"$(basename $(dirname ${PWD}))\" != \"node_modules\" ]; then npm shrinkwrap; fi"
+  },
+  "lib": "react",
+  "mobile": true,
+  "keywords": [
+    "clam",
+    "react",
+    "h5-snake"
+  ],
+  "group": "shuke.cl",
+  "devDependencies": {
+    "@ali/grunt-default-config": "~0.4.20",
+    "@ali/grunt-devserver": "~0.1.13",
+    "@ali/grunt-hpm": "~0.2.4",
+    "@ali/grunt-inc-offline": "~0.2.10",
+    "babel-core": "~6.5.2",
+    "babel-eslint": "~5.0.0",
+    "babel-loader": "~6.2.2",
+    "babel-plugin-react-transform": "~2.0.0",
+    "babel-plugin-transform-runtime": "~6.5.2",
+    "babel-preset-es2015": "~6.5.0",
+    "babel-preset-react": "~6.5.0",
+    "babel-preset-stage-0": "~6.5.0",
+    "babel-runtime": "~5.8.35",
+    "clam-util": "~0.1.2",
+    "css-loader": "~0.23.1",
+    "eslint": "~2.2.0",
+    "eslint-config-airbnb": "~6.1.0",
+    "eslint-plugin-react": "~4.2.1",
+    "file-loader": "~0.8.5",
+    "grunt": "~0.4.5",
+    "grunt-cacheinfo": "~0.1.14",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-domman": "~0.2.10",
+    "grunt-eslint": "~18.0.0",
+    "grunt-exec": "",
+    "grunt-prompt": "~1.3.0",
+    "grunt-replace": "~0.9.3",
+    "grunt-webpack": "~1.0.11",
+    "jit-grunt": "",
+    "lodash": "~4.5.1",
+    "node-sass": "~3.4.2",
+    "react": "git+ssh://git@gitlab.alibaba-inc.com:mpi/base-react.git",
+    "react-transform-hmr": "~1.0.4",
+    "sass-loader": "~3.1.2",
+    "style-loader": "~0.13.0",
+    "time-grunt": "^0.2.10",
+    "url-loader": "~0.5.7",
+    "webpack": "~1.12.14",
+    "webpack-dev-server": "~1.14.1"
+  },
+  "basePath": "pages/home/index.html",
+  "baseUrl": "/shuke.cl/h5-snake/home/index.html",
+  "dependencies": {
+    "classnames": "~2.2.3"
+  },
+  "offlineTargets": {
+    "trip": true,
+    "taobao": true,
+    "alipay": false
+  }
+}

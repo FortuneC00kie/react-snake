@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@import "../scss/variables";
+@import "../scss/mpi-mixins";
+
+%m-pop-btn{
+  -webkit-box-flex:1;
+  text-align: center;
+  font-size: 18px;
+}
+
+%m-pop-tips {
+  width: rem(540);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  background-color: white;
+  -webkit-transform: translate(-50%, -50%);
+  .m-pop-content {
+    padding: rem(48) rem(30);
+    color: $m-tab-txt-color;
+    font-size: 14px;
+    line-height: rem(36);
+  }
+  .m-pop-title {
+    color: $m-dark-txt-color;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: rem(26);
+  }
+  .m-pop-btn {
+    @include m-r1bt-bg(#AFAFBC);
+    height: rem(88);
+    line-height: rem(88);
+    display: -webkit-box;     
+  }
+  .m-btn-cancel {
+    @extend %m-pop-btn;
+    @include m-r1br-bg(#AFAFBC);
+    color: $m-tab-txt-color;
+  }
+  .m-btn-confirm {
+    @extend %m-pop-btn;
+    color: $m-primary-color;
+  }
+}

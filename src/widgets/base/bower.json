@@ -1,0 +1,48 @@
+{
+  "name": "base",
+  "description": "mpi base for alitrip",
+  "version": "0.2.0",
+  "main": "seed.js",
+  "authors": [
+    "孝瓘 <meng.limeng@alibaba-inc.com>",
+    "弘树 <tiehang.lth@alibaba-inc.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "base"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "http://gitlab.alibaba-inc.com/mpi/base",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./components",
+    "test",
+    "tests",
+    "demo",
+    "guide",
+    "widgets",
+    "build_offline",
+    "build/*.zip",
+    "Gruntfile.js",
+    "webpack.config.js",
+    "build/*.js",
+    "build/*.map",
+    "!build/*-min.js"
+  ],
+  "devDependencies": {
+    "bridge": "mpi/bridge#publish/0.3.0",
+    "q": "mpi/q#publish/0.1.0",
+    "wlog": "mpi/wlog#publish/0.3.3",
+    "tms-offline-parser": "mpi/tms-offline-parser#publish/0.0.1",
+    "tracker": "mpi/tracker#publish/0.5.1",
+    "lib-windvane": "mtb/lib-windvane#publish/2.1.5",
+    "pointman": "mpi/pointman#publish/1.0.4",
+    "zepto": "mpi/zepto#1.1.6",
+    "jsbridge": "mpi/jsbridge#publish/0.1.2",
+    "mtop": "mpi/mtop#publish/0.2.3"
+  }
+}
