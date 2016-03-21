@@ -53,6 +53,8 @@ MTop.getApi('mtop.trip.uilayout.queryUILayout', '1.0', {
 // Example Mod
 import Snake from '@mods/snake/index';
 import Header from '@mods/header/index';
+import Food from '@mods/food/index';
+import Obstacle from '@mods/obstacle/index';
 
 var data = [
   {name : "陈良",age : 33, birthday : "1982011011", desc : "男人一枚"},
@@ -67,7 +69,8 @@ ReactDOM.render(
   (
       <div>
         <Snake />
-        <Header />
+        <Food />
+        <Obstacle/>
       </div>
   )
   , document.getElementById('J_Page'));

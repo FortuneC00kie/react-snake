@@ -3,6 +3,11 @@
 - 创建者: 舒克<shuke.cl@taobao.com>
 - 项目地址: http://gitlab.alibaba-inc.com/shuke.cl/h5-snake
 
+### 特点
+
+- 最简单的移动算法
+- 最简单的碰撞检测
+
 ### 初始化
 
 1. `git clone`

@@ -11,7 +11,7 @@ import classNames from 'classnames/bind';
 import styles from './index.scss';
 let cx = classNames.bind(styles);
 
-export default class SnakeNode extends Component {
+export default class Obstacle extends Component {
 
   static propTypes = {
 
