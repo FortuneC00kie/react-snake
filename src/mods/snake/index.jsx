@@ -10,6 +10,13 @@ let { PureRenderMixin } = React.addons;
 import classNames from 'classnames/bind';
 import styles from './index.scss';
 let cx = classNames.bind(styles);
+
+const  KEY_MAP = {
+  "37" : 0, //"left",
+  "38" : 1, //"up",
+  "39" : 2,//"right",
+  "40" : 3//"down"
+};
 export default class Snake extends Component {
 
   static propTypes = {
@@ -21,12 +28,7 @@ export default class Snake extends Component {
    */
   static defaultProps = {
     unit : 10,
-    keyMap : {
-      "37" : 0, //"left",
-      "38" : 1, //"up",
-      "39" : 2,//"right",
-      "40" : 3//"down"
-    }
+    model : []
   };
 
   /**
@@ -34,31 +36,7 @@ export default class Snake extends Component {
    */
   state = {
     direction : 3,
-    snakeModel : [{
-      x : 5,
-      y : 5
-    },{
-      x:5,
-      y:6
-    },{
-      x:5,
-      y:7
-    },{
-      x:5,
-      y:8
-    },{
-      x:6,
-      y:8
-    },{
-      x:7,
-      y:8
-    },{
-      x:8,
-      y:8
-    },{
-      x:8,
-      y:9
-    }]
+    snakeModel : []
   };
 
   /**
@@ -81,14 +59,14 @@ export default class Snake extends Component {
   play(){
     setInterval(function(){
       this.move(this.state.direction);
-    }.bind(this),30);
+    }.bind(this),60);
   }
   /**
    * 蛇的移动
    * @param direction 移动的方向
      */
   move(direction){
-    let snakeModel = this.state.snakeModel
+    let snakeModel = this.props.model
     let newPos = Object.assign({},snakeModel[0]);
     switch(direction){
       case 1 : //up
@@ -107,7 +85,9 @@ export default class Snake extends Component {
         break;
     }
     this._doMove(snakeModel, newPos);
-    this.setState(snakeModel);
+    this.setState(snakeModel,function(){
+      this.props.onMove(newPos);
+    });
   }
 
   /**
@@ -117,7 +97,7 @@ export default class Snake extends Component {
    * @private
      */
   _isAllowDirection(direction){
-    return !(Math.abs(direction - this.state.direction) == 2 && this.state.snakeModel.length > 1);
+    return !(Math.abs(direction - this.state.direction) == 2 && this.props.model.length > 1);
   }
   /**
    * 移动算法的实现,去掉最后一个蛇节点,头部插入一个蛇的节点
@@ -130,7 +110,7 @@ export default class Snake extends Component {
   }
   render() {
     var unit = this.props.unit;
-    var snakeNodes = this.state.snakeModel.map(function (item) {
+    var snakeNodes = this.props.model.map(function (item) {
       let nodeStyle = {
         left : item.x * unit,
         top : item.y * unit,

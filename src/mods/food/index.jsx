@@ -21,13 +21,8 @@ export default class Food extends Component {
    * default props
    */
   static defaultProps = {
-    foodModel : [
-      {
-        x:100,
-        y:100
-      }
-    ]
-
+    model:[],
+    unit : 10
   };
 
   /**
@@ -46,9 +41,22 @@ export default class Food extends Component {
   }
 
   render() {
-
+    var unit = this.props.unit;
+    var foodNodes = this.props.model.map(function(food){
+      let foodStyle = {
+        left : food.x * unit,
+        top : food.y * unit,
+        width:unit,
+        height:unit
+      }
+      return (
+        <div className={styles.food} style={foodStyle}></div>
+      )
+    });
     return (
-      <p>Demo</p>
+      <div>
+        {foodNodes}
+      </div>
     );
   }
 }
