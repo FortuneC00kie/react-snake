@@ -12,7 +12,6 @@ import styles from './index.scss';
 let cx = classNames.bind(styles);
 
 import Snake from '@mods/snake/index';
-import Header from '@mods/header/index';
 import Food from '@mods/food/index';
 import Obstacle from '@mods/obstacle/index';
 
@@ -26,9 +25,10 @@ export default class App extends Component {
    * default props
    */
   static defaultProps = {
-    clashObjs : []//需要进行碰撞检测的区域
+
   };
 
+  clashObjs = [];//需要进行碰撞检测的区域
   /**
    * init state
    */
@@ -42,7 +42,8 @@ export default class App extends Component {
       y : 6
     }],
     foods    : [{x:10,y:30}],
-    obstacle : [{x:-1,y:-1,w:100,h:1}]
+    obstacle : [{x:-1,y:-1,w:100,h:1},{x:-1,y:-1,w:1,h:100}],
+    gameState : 'play'
   };
   /**
    * @constructor
@@ -65,20 +66,37 @@ export default class App extends Component {
    * 吃食
    * @param food
      */
-  handleEat(food){
+  eat(food){
+    var foods = this.state.foods;
+    var indexOf = function(arr,target){
+      let result = -1;
+      arr.some((item,index) => {
+        if(target.x === item.x && target.y === item.y){
+          result = index;
+        }
+      })
+      return result;
+    }
+    this.setState({foods : foods.splice(indexOf(foods,food),1)});
     this.state.snake.unshift(food);
+
   }
 
   /**
-   * 移动,碰撞检测
+   * 每一次移动调用,碰撞检测
    * @param newPos
      */
   handleMove(newPos){
-    debugger;
-    this.clashObjs.some(clashObj => {
-      console.log(this._isRegionOverlap(this._parseClashObj(newPos,'snake'),clashObj));
-    })
-
+    var clashObj = this._detectClash(newPos);
+    if(clashObj){//如果发生碰撞则停止
+      if(clashObj.type === "obstacle"){
+        this.setState({
+          gameState : "stop"
+        });
+      }else if(clashObj.type === "food"){
+        this.eat(newPos);
+      }
+    }
   }
 
   /**
@@ -87,8 +105,22 @@ export default class App extends Component {
   handleClash(){
 
   }
-  _detectClash(objs,target){
 
+  /**
+   * 蛇和食物,障碍物的碰撞,返回碰撞物体
+   * @param target
+   * @returns {*}
+   * @private
+     */
+  _detectClash(target){
+    var result = null;
+    this.clashObjs.some(clashObj => {
+      if(this._isRegionOverlap(this._parseClashObj(target,'snake'),clashObj)){
+        result = clashObj;
+        return true;
+      }
+    });
+    return result;
   }
 
   /**
@@ -97,12 +129,11 @@ export default class App extends Component {
      */
   _refreshClashObject(){
     this.clashObjs=[];
-    this.clashObjs.concat(this.state.foods.map(food => {
+    this.clashObjs = this.state.foods.map(food => {
       return this._parseClashObj(food,'food');
-    }));
-    this.clashObjs.concat(this.state.obstacle.map(obstacle =>{
+    }).concat(this.state.obstacle.map(obstacle =>{
       return this._parseClashObj(obstacle,'obstacle');
-    }))
+    }));
   }
   /**
    * 将原始食物和障碍物转化为对象
@@ -141,9 +172,9 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Snake unit={this.state.unit} model={this.state.snake} onEat={this.handleEat} onMove={this.handleMove} onClash={this.handleClash} />
-        <Food model={this.state.foods}  unit={this.state.unit}/>
-        <Obstacle model={this.state.obstacle}  unit={this.state.unit}/>
+        <Snake gameState={this.state.gameState} unit={this.state.unit} model={this.state.snake}  onMove={this.handleMove.bind(this)} onClash={this.handleClash} />
+        <Food gameState={this.state.gameState} model={this.state.foods}  unit={this.state.unit}/>
+        <Obstacle gameState={this.state.gameState} model={this.state.obstacle}  unit={this.state.unit}/>
       </div>
     );
   }

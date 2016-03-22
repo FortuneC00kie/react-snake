@@ -47,7 +47,7 @@ export default class Snake extends Component {
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.play();
     document.addEventListener('keydown',function(e){
-      var userDirection = this.props.keyMap[e.keyCode];
+      var userDirection = KEY_MAP[e.keyCode];
       if(!this._isAllowDirection(userDirection)){
         return;
       }
@@ -57,9 +57,12 @@ export default class Snake extends Component {
     }.bind(this),true);
   }
   play(){
-    setInterval(function(){
+    this._ticker = setInterval(function(){
       this.move(this.state.direction);
     }.bind(this),60);
+  }
+  stop(){
+    clearInterval(this._ticker);
   }
   /**
    * 蛇的移动
@@ -89,7 +92,6 @@ export default class Snake extends Component {
       this.props.onMove(newPos);
     });
   }
-
   /**
    * 检测是否是反方向运动,只有在蛇的节点大于1时需要检测
    * @param direction
@@ -109,6 +111,10 @@ export default class Snake extends Component {
     snakeModel.unshift(newPos);
   }
   render() {
+    if(this.props.gameState == "stop"){
+      this.stop();
+      return;
+    }
     var unit = this.props.unit;
     var snakeNodes = this.props.model.map(function (item) {
       let nodeStyle = {
