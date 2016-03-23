@@ -57,7 +57,6 @@
     "node-sass": "~3.4.2",
     "react": "git+ssh://git@gitlab.alibaba-inc.com:mpi/base-react.git",
     "react-transform-hmr": "~1.0.4",
-    "redux-devtools": "~3.1.1",
     "sass-loader": "~3.1.2",
     "style-loader": "~0.13.0",
     "time-grunt": "^0.2.10",
@@ -69,7 +68,6 @@
   "baseUrl": "/shuke.cl/h5-snake/home/index.html",
   "dependencies": {
     "classnames": "~2.2.3",
-    "react-redux": "~4.4.1",
     "redux": "~3.3.1"
   },
   "offlineTargets": {
