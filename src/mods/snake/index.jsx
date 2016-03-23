@@ -10,6 +10,13 @@ let { PureRenderMixin } = React.addons;
 import classNames from 'classnames/bind';
 import styles from './index.scss';
 let cx = classNames.bind(styles);
+
+const  KEY_MAP = {
+  "37" : 0, //"left",
+  "38" : 1, //"up",
+  "39" : 2,//"right",
+  "40" : 3//"down"
+};
 export default class Snake extends Component {
 
   static propTypes = {
@@ -21,45 +28,15 @@ export default class Snake extends Component {
    */
   static defaultProps = {
     unit : 10,
-    keyMap : {
-      "37" : 0, //"left",
-      "38" : 1, //"up",
-      "39" : 2,//"right",
-      "40" : 3//"down"
-    }
+    model : []
   };
-
   /**
    * init state
    */
-  state = {
+  state = Object.assign({
     direction : 3,
-    snakeModel : [{
-      x : 5,
-      y : 5
-    },{
-      x:5,
-      y:6
-    },{
-      x:5,
-      y:7
-    },{
-      x:5,
-      y:8
-    },{
-      x:6,
-      y:8
-    },{
-      x:7,
-      y:8
-    },{
-      x:8,
-      y:8
-    },{
-      x:8,
-      y:9
-    }]
-  };
+    model : []
+  },this.props);
 
   /**
    * @constructor
@@ -69,7 +46,12 @@ export default class Snake extends Component {
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.play();
     document.addEventListener('keydown',function(e){
-      var userDirection = this.props.keyMap[e.keyCode];
+      if(typeof KEY_MAP[e.keyCode] === 'undefined'){
+        return;
+      }
+      e.preventDefault();
+
+      let userDirection = KEY_MAP[e.keyCode];
       if(!this._isAllowDirection(userDirection)){
         return;
       }
@@ -79,20 +61,23 @@ export default class Snake extends Component {
     }.bind(this),true);
   }
   play(){
-    setInterval(function(){
+    this._ticker = setInterval(function(){
       this.move(this.state.direction);
-    }.bind(this),30);
+    }.bind(this),60);
+  }
+  stop(){
+    clearInterval(this._ticker);
   }
   /**
    * 蛇的移动
    * @param direction 移动的方向
      */
   move(direction){
-    let snakeModel = this.state.snakeModel
+    let snakeModel = this.state.model
     let newPos = Object.assign({},snakeModel[0]);
     switch(direction){
       case 1 : //up
-        newPos.y  = newPos.y-1;
+        newPos.y --;
         break;
       case 3 : //down
         newPos.y ++ ;
@@ -106,10 +91,23 @@ export default class Snake extends Component {
       default :
         break;
     }
+    newPos.direction = direction;
     this._doMove(snakeModel, newPos);
-    this.setState(snakeModel);
+    this.setState({
+      model : snakeModel.concat()
+    },function(){
+      this.props.onMove(newPos);
+    });
   }
 
+  /**
+   * 吃食
+   * @param food
+     */
+  eat(food){
+    this.state.model.unshift(food);
+    this.setState({model:this.state.model});
+  }
   /**
    * 检测是否是反方向运动,只有在蛇的节点大于1时需要检测
    * @param direction
@@ -117,7 +115,7 @@ export default class Snake extends Component {
    * @private
      */
   _isAllowDirection(direction){
-    return !(Math.abs(direction - this.state.direction) == 2 && this.state.snakeModel.length > 1);
+    return !(Math.abs(direction - this.state.direction) == 2 && this.state.model.length > 1);
   }
   /**
    * 移动算法的实现,去掉最后一个蛇节点,头部插入一个蛇的节点
@@ -129,8 +127,12 @@ export default class Snake extends Component {
     snakeModel.unshift(newPos);
   }
   render() {
+    if(this.props.gameState == "stop"){
+      this.stop();
+      return;
+    }
     var unit = this.props.unit;
-    var snakeNodes = this.state.snakeModel.map(function (item) {
+    var snakeNodes = this.state.model.map(function (item) {
       let nodeStyle = {
         left : item.x * unit,
         top : item.y * unit,
