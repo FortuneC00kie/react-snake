@@ -10,7 +10,15 @@ let { PureRenderMixin } = React.addons;
 import classNames from 'classnames/bind';
 import styles from './index.scss';
 let cx = classNames.bind(styles);
-
+let indexOfArr = function(arr,target){
+  let result = -1;
+  arr.some((item,index) => {
+    if(target.x === item.x && target.y === item.y){
+      result = index;
+    }
+  })
+  return result;
+}
 export default class Food extends Component {
 
   static propTypes = {
@@ -29,7 +37,7 @@ export default class Food extends Component {
    * init state
    */
   state = {
-
+    model : this.props.model
   };
 
   /**
@@ -42,7 +50,7 @@ export default class Food extends Component {
 
   render() {
     var unit = this.props.unit;
-    var foodNodes = this.props.model.map(function(food){
+    var foodNodes = this.state.model.map(function(food){
       let foodStyle = {
         left : food.x * unit,
         top : food.y * unit,
@@ -58,5 +66,24 @@ export default class Food extends Component {
         {foodNodes}
       </div>
     );
+  }
+
+  /**
+   * 食物被吃掉
+   * @param food
+     */
+  del(food){
+    var foods = this.state.model;
+    let foodIndex = indexOfArr(foods,food);
+    if(foodIndex < 0){
+      return;
+    }
+    foods.splice(foodIndex,1);//食物消失
+    this.setState({model : foods.concat()},function(){
+      this.props.onDel();
+    });
+    if(foods.length < 1){
+      this.props.onEmpty();
+    }
   }
 }

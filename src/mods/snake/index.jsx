@@ -30,14 +30,13 @@ export default class Snake extends Component {
     unit : 10,
     model : []
   };
-
   /**
    * init state
    */
-  state = {
+  state = Object.assign({
     direction : 3,
-    snakeModel : []
-  };
+    model : []
+  },this.props);
 
   /**
    * @constructor
@@ -47,7 +46,12 @@ export default class Snake extends Component {
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.play();
     document.addEventListener('keydown',function(e){
-      var userDirection = KEY_MAP[e.keyCode];
+      if(typeof KEY_MAP[e.keyCode] === 'undefined'){
+        return;
+      }
+      e.preventDefault();
+
+      let userDirection = KEY_MAP[e.keyCode];
       if(!this._isAllowDirection(userDirection)){
         return;
       }
@@ -69,11 +73,11 @@ export default class Snake extends Component {
    * @param direction 移动的方向
      */
   move(direction){
-    let snakeModel = this.props.model
+    let snakeModel = this.state.model
     let newPos = Object.assign({},snakeModel[0]);
     switch(direction){
       case 1 : //up
-        newPos.y  = newPos.y-1;
+        newPos.y --;
         break;
       case 3 : //down
         newPos.y ++ ;
@@ -87,10 +91,22 @@ export default class Snake extends Component {
       default :
         break;
     }
+    newPos.direction = direction;
     this._doMove(snakeModel, newPos);
-    this.setState(snakeModel,function(){
+    this.setState({
+      model : snakeModel.concat()
+    },function(){
       this.props.onMove(newPos);
     });
+  }
+
+  /**
+   * 吃食
+   * @param food
+     */
+  eat(food){
+    this.state.model.unshift(food);
+    this.setState({model:this.state.model});
   }
   /**
    * 检测是否是反方向运动,只有在蛇的节点大于1时需要检测
@@ -99,7 +115,7 @@ export default class Snake extends Component {
    * @private
      */
   _isAllowDirection(direction){
-    return !(Math.abs(direction - this.state.direction) == 2 && this.props.model.length > 1);
+    return !(Math.abs(direction - this.state.direction) == 2 && this.state.model.length > 1);
   }
   /**
    * 移动算法的实现,去掉最后一个蛇节点,头部插入一个蛇的节点
@@ -116,7 +132,7 @@ export default class Snake extends Component {
       return;
     }
     var unit = this.props.unit;
-    var snakeNodes = this.props.model.map(function (item) {
+    var snakeNodes = this.state.model.map(function (item) {
       let nodeStyle = {
         left : item.x * unit,
         top : item.y * unit,

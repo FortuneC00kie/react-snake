@@ -14,6 +14,7 @@ let cx = classNames.bind(styles);
 import Snake from '@mods/snake/index';
 import Food from '@mods/food/index';
 import Obstacle from '@mods/obstacle/index';
+import Util from '@widgets/utils/index';
 
 export default class App extends Component {
 
@@ -24,26 +25,24 @@ export default class App extends Component {
   /**
    * default props
    */
-  static defaultProps = {
-
-  };
+  static defaultProps = Object.assign({
+    unit : 10,
+    scenceStyle : {
+      left:0,
+      top:0
+    }
+  });
 
   clashObjs = [];//需要进行碰撞检测的区域
   /**
    * init state
    */
   state = {
-    unit : 20,//最小单元宽度,蛇体宽度,步长
-    snake    : [{
-      x : 0,
-      y : 5
-    },{
-      x : 0,
-      y : 6
-    }],
-    foods    : [{x:10,y:30}],
+    unit : this.props.unit,//最小单元宽度,蛇体宽度,步长
+    snake    : this.props.snake,
+    foods    : Util.randomGenFoods(this.props.gameRegion.w,this.props.gameRegion.h,this.props.foodsCount),
     obstacle : [{x:-1,y:-1,w:100,h:1},{x:-1,y:-1,w:1,h:100}],
-    gameState : 'play'
+    gameState : "ing"
   };
   /**
    * @constructor
@@ -51,35 +50,15 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-    this._refreshClashObject();
+    this.refreshClashObject();
   }
-
-  /**
-   * 初始化state
-   * @returns {*}
-     */
-  getInitialState() {
-    return this.props;
-  }
-
   /**
    * 吃食
    * @param food
      */
   eat(food){
-    var foods = this.state.foods;
-    var indexOf = function(arr,target){
-      let result = -1;
-      arr.some((item,index) => {
-        if(target.x === item.x && target.y === item.y){
-          result = index;
-        }
-      })
-      return result;
-    }
-    this.setState({foods : foods.splice(indexOf(foods,food),1)});
-    this.state.snake.unshift(food);
-
+    this.refs.snake.eat(food);
+    this.refs.food.del(food);
   }
 
   /**
@@ -89,22 +68,17 @@ export default class App extends Component {
   handleMove(newPos){
     var clashObj = this._detectClash(newPos);
     if(clashObj){//如果发生碰撞则停止
-      if(clashObj.type === "obstacle"){
-        this.setState({
-          gameState : "stop"
+      if(clashObj.type === "obstacle"){//撞到障碍物
+        this.setState({gameState:'fail'},function(){
+          this.gameOver();
         });
-      }else if(clashObj.type === "food"){
+
+      }else if(clashObj.type === "food"){//撞到食物
         this.eat(newPos);
       }
     }
   }
 
-  /**
-   * 撞击到障碍物
-   */
-  handleClash(){
-
-  }
 
   /**
    * 蛇和食物,障碍物的碰撞,返回碰撞物体
@@ -127,13 +101,24 @@ export default class App extends Component {
    * 重新计算可碰撞物体位置
    * @private
      */
-  _refreshClashObject(){
+  refreshClashObject(){
     this.clashObjs=[];
     this.clashObjs = this.state.foods.map(food => {
       return this._parseClashObj(food,'food');
     }).concat(this.state.obstacle.map(obstacle =>{
       return this._parseClashObj(obstacle,'obstacle');
     }));
+  }
+
+  /**
+   * 游戏结束
+   */
+  gameOver(){
+    this.refs.snake.stop();
+    console.log(this.state.gameState);
+  }
+  handleFoodEmpty(){
+    this.gameOver('success');
   }
   /**
    * 将原始食物和障碍物转化为对象
@@ -170,11 +155,12 @@ export default class App extends Component {
     return right > left && top >  bottom;
   }
   render() {
+
     return (
-      <div>
-        <Snake gameState={this.state.gameState} unit={this.state.unit} model={this.state.snake}  onMove={this.handleMove.bind(this)} onClash={this.handleClash} />
-        <Food gameState={this.state.gameState} model={this.state.foods}  unit={this.state.unit}/>
-        <Obstacle gameState={this.state.gameState} model={this.state.obstacle}  unit={this.state.unit}/>
+      <div style={this.props.scenceStyle}>
+        <Snake ref="snake" model={this.state.snake}  unit={this.state.unit}  onMove={this.handleMove.bind(this)} />
+        <Food ref="food" model={this.state.foods}  unit={this.state.unit} onDel={this.refreshClashObject.bind(this)} onEmpty={this.handleFoodEmpty.bind(this)}/>
+        <Obstacle ref="obstacle" model={this.state.obstacle}  unit={this.state.unit}/>
       </div>
     );
   }

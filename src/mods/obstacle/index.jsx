@@ -42,7 +42,7 @@ export default class Obstacle extends Component {
   render() {
 
     return (
-      <p>Demo</p>
+      <p></p>
     );
   }
 }
