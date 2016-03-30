@@ -73,6 +73,7 @@ export default class Snake extends Component {
     var Swipe = new Hammer.Swipe();
     mc.add(Swipe);
     mc.on('swipe',function(e){
+      e.preventDefault();
       var dir = e.direction;
       if(typeof SWIP_MAP[dir] === 'undefined'){
         return;
