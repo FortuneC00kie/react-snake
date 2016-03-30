@@ -63,7 +63,7 @@ export default class Snake extends Component {
   play(){
     this._ticker = setInterval(function(){
       this.move(this.state.direction);
-    }.bind(this),60);
+    }.bind(this),100);
   }
   stop(){
     clearInterval(this._ticker);

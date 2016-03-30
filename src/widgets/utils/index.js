@@ -16,8 +16,8 @@ export default {
   getWindowRegion : function(){
     let documentEle  = doc.documentElement;
     return {
-      width    : win.innerWidth,
-      height    : win.innerHeight,
+      width   : win.innerWidth,
+      height  : win.innerHeight,
       left : win.scrollX,
       top  : win.scrollY
     }
