@@ -9,6 +9,7 @@ let { PureRenderMixin } = React.addons;
 
 import classNames from 'classnames/bind';
 import styles from './index.scss';
+import Hammer from 'hammerjs';
 let cx = classNames.bind(styles);
 
 const  KEY_MAP = {
@@ -17,6 +18,12 @@ const  KEY_MAP = {
   "39" : 2,//"right",
   "40" : 3//"down"
 };
+const SWIP_MAP = {
+  "2" : 0,
+  "8" : 1,
+  "4" : 2,
+  "16": 3
+}
 export default class Snake extends Component {
 
   static propTypes = {
@@ -45,6 +52,7 @@ export default class Snake extends Component {
     super(props);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.play();
+    //键盘操作
     document.addEventListener('keydown',function(e){
       if(typeof KEY_MAP[e.keyCode] === 'undefined'){
         return;
@@ -59,6 +67,26 @@ export default class Snake extends Component {
         direction : userDirection
       });
     }.bind(this),true);
+
+    var mc = new Hammer.Manager(document.body);
+
+    var Swipe = new Hammer.Swipe();
+    mc.add(Swipe);
+    mc.on('swipe',function(e){
+      var dir = e.direction;
+      if(typeof SWIP_MAP[dir] === 'undefined'){
+        return;
+      }
+      e.preventDefault();
+
+      let userDirection = SWIP_MAP[dir];
+      if(!this._isAllowDirection(userDirection)){
+        return;
+      }
+      this.setState({
+        direction : userDirection
+      });
+    }.bind(this));
   }
   play(){
     this._ticker = setInterval(function(){

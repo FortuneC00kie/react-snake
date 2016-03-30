@@ -81,9 +81,9 @@ export default class Food extends Component {
     foods.splice(foodIndex,1);//食物消失
     this.setState({model : foods.concat()},function(){
       this.props.onDel();
+      if(foods.length < 1){
+        this.props.onEmpty();
+      }
     });
-    if(foods.length < 1){
-      this.props.onEmpty();
-    }
   }
 }

@@ -40,7 +40,7 @@ export default class App extends Component {
   state = {
     unit : this.props.unit,//最小单元宽度,蛇体宽度,步长
     snake    : this.props.snake,
-    foods    : Util.randomGenFoods(this.props.gameRegion.w,this.props.gameRegion.h,this.props.foodsCount),
+    foods    : Util.randomGenFoods(this.props.gameRegion.maxX,this.props.gameRegion.maxY,this.props.foodsCount),
     obstacle : [{x:-1,y:-1,w:100,h:1},{x:-1,y:-1,w:1,h:100}],
     gameState : "ing"
   };
@@ -72,9 +72,13 @@ export default class App extends Component {
         this.setState({gameState:'fail'},function(){
           this.gameOver();
         });
-
       }else if(clashObj.type === "food"){//撞到食物
         this.eat(newPos);
+      }else if(clashObj.type ==='outside'){
+        this.setState({gameState:'fail'},function(){
+          console.log('撞到边界了');
+          this.gameOver();
+        });
       }
     }
   }
@@ -87,13 +91,28 @@ export default class App extends Component {
    * @private
      */
   _detectClash(target){
-    var result = null;
-    this.clashObjs.some(clashObj => {
-      if(this._isRegionOverlap(this._parseClashObj(target,'snake'),clashObj)){
-        result = clashObj;
+    let result = null;
+    let posArr = [];
+    let {foods,obstacle} = this.state;
+
+    foods = foods.map(food =>{
+      food.type = 'food';
+      return food;
+    });
+    obstacle = obstacle.map(obstacleItem => {
+      obstacleItem.type = 'obstacle';
+      return obstacleItem;
+    });
+    posArr = foods.concat(obstacle);
+    posArr.some(pos => {
+      if(pos.x == target.x && pos.y == target.y){
+        result = pos;
         return true;
       }
     });
+    if(this._isOutside(target)){
+      result =  {type:'outside'};
+    }
     return result;
   }
 
@@ -109,7 +128,18 @@ export default class App extends Component {
       return this._parseClashObj(obstacle,'obstacle');
     }));
   }
-
+  /**
+   * 检测是否出边界
+   * @param newPos
+   * @returns {boolean}
+     */
+  _isOutside(newPos){
+    var gameRegion = this.props.gameRegion;
+    if(newPos.x >= gameRegion.maxX || newPos.y >= gameRegion.maxY || newPos.x < 0 || newPos.y < 0){
+      return true;
+    }
+    return false;
+  }
   /**
    * 游戏结束
    */
@@ -118,7 +148,9 @@ export default class App extends Component {
     console.log(this.state.gameState);
   }
   handleFoodEmpty(){
-    this.gameOver('success');
+    this.setState({'gameState':'success'}, function () {
+      this.gameOver();
+    })
   }
   /**
    * 将原始食物和障碍物转化为对象
@@ -157,7 +189,7 @@ export default class App extends Component {
   render() {
 
     return (
-      <div style={this.props.scenceStyle}>
+      <div className={styles.gamescence} style={this.props.scenceStyle}>
         <Snake ref="snake" model={this.state.snake}  unit={this.state.unit}  onMove={this.handleMove.bind(this)} />
         <Food ref="food" model={this.state.foods}  unit={this.state.unit} onDel={this.refreshClashObject.bind(this)} onEmpty={this.handleFoodEmpty.bind(this)}/>
         <Obstacle ref="obstacle" model={this.state.obstacle}  unit={this.state.unit}/>

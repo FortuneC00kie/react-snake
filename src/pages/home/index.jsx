@@ -17,21 +17,18 @@ import App from '@mods/app/index';
 import Util from '@widgets/utils/index';
 
 const snake = [{x:0,y:0}];
-let gameRegion = Util.getWindowRegion();
+let gameRegion = Util.getLayerPosition();
 var unit = Util.calculateUnit(gameRegion);
-gameRegion.w = Math.ceil(gameRegion.width  / unit);
-gameRegion.h = Math.ceil(gameRegion.height / unit);
 
 let props = {
-  scenceStyle : {
-    left : gameRegion.left,
-    top : gameRegion.top,
-    position: 'absolute'
-  },
+  scenceStyle : Object.assign({
+    position:'absolute'
+  },gameRegion),
   gameRegion,
   unit,
   snake,
-  foodsCount : 10
+  foodsCount : 3,
+
 }
 
 
