@@ -32,8 +32,6 @@ export default class App extends Component {
       top:0
     }
   });
-
-  clashObjs = [];//需要进行碰撞检测的区域
   /**
    * init state
    */
@@ -41,8 +39,8 @@ export default class App extends Component {
     unit : this.props.unit,//最小单元宽度,蛇体宽度,步长
     snake    : this.props.snake,
     foods    : Util.randomGenFoods(this.props.gameRegion.maxX,this.props.gameRegion.maxY,this.props.foodsCount),
-    obstacle : [{x:-1,y:-1,w:100,h:1},{x:-1,y:-1,w:1,h:100}],
-    gameState : "ing"
+    obstacle : [{x:-1,y:-1,w:100,h:1},{x:-1,y:-1,w:1,h:100}], //障碍物
+    gameState : "unstart"
   };
   /**
    * @constructor
@@ -50,7 +48,6 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-    this.refreshClashObject();
   }
   /**
    * 吃食
@@ -60,7 +57,6 @@ export default class App extends Component {
     this.refs.snake.eat(food);
     this.refs.food.del(food);
   }
-
   /**
    * 每一次移动调用,碰撞检测
    * @param newPos
@@ -85,7 +81,7 @@ export default class App extends Component {
 
 
   /**
-   * 蛇和食物,障碍物的碰撞,返回碰撞物体
+   * 蛇和食物,障碍物,边界的碰撞,返回碰撞物体
    * @param target
    * @returns {*}
    * @private
@@ -115,31 +111,6 @@ export default class App extends Component {
     }
     return result;
   }
-
-  /**
-   * 重新计算可碰撞物体位置
-   * @private
-     */
-  refreshClashObject(){
-    this.clashObjs=[];
-    this.clashObjs = this.state.foods.map(food => {
-      return this._parseClashObj(food,'food');
-    }).concat(this.state.obstacle.map(obstacle =>{
-      return this._parseClashObj(obstacle,'obstacle');
-    }));
-  }
-  /**
-   * 检测是否出边界
-   * @param newPos
-   * @returns {boolean}
-     */
-  _isOutside(newPos){
-    var gameRegion = this.props.gameRegion;
-    if(newPos.x >= gameRegion.maxX || newPos.y >= gameRegion.maxY || newPos.x < 0 || newPos.y < 0){
-      return true;
-    }
-    return false;
-  }
   /**
    * 游戏结束
    */
@@ -153,23 +124,17 @@ export default class App extends Component {
     })
   }
   /**
-   * 将原始食物和障碍物转化为对象
-   * @param obj
-   * @param type
-   * @private
-     */
-  _parseClashObj(obj,type){
-    var unit = this.state.unit
-    obj.w = obj.w || 1;
-    obj.h = obj.h || 1;
-    obj.type = type;
-    obj.left = obj.x * unit;
-    obj.top = obj.y * unit;
-    obj.right = (obj.x+obj.w) * unit;
-    obj.bottom = (obj.y+obj.h) * unit;
-    return obj;
+   * 检测是否出边界
+   * @param newPos
+   * @returns {boolean}
+   */
+  _isOutside(newPos){
+    var gameRegion = this.props.gameRegion;
+    if(newPos.x >= gameRegion.maxX || newPos.y >= gameRegion.maxY || newPos.x < 0 || newPos.y < 0){
+      return true;
+    }
+    return false;
   }
-
   /**
    * 检测两个矩形是否碰撞
    * @param region1
@@ -187,11 +152,10 @@ export default class App extends Component {
     return right > left && top >  bottom;
   }
   render() {
-
     return (
       <div className={styles.gamescence} style={this.props.scenceStyle}>
-        <Snake ref="snake" model={this.state.snake}  unit={this.state.unit}  onMove={this.handleMove.bind(this)} />
-        <Food ref="food" model={this.state.foods}  unit={this.state.unit} onDel={this.refreshClashObject.bind(this)} onEmpty={this.handleFoodEmpty.bind(this)}/>
+        <Snake ref="snake" model={this.state.snake}  unit={this.state.unit}  onMove={this.handleMove.bind(this)}/>
+        <Food ref="food" model={this.state.foods}  unit={this.state.unit} onEmpty={this.handleFoodEmpty.bind(this)}/>
         <Obstacle ref="obstacle" model={this.state.obstacle}  unit={this.state.unit}/>
       </div>
     );

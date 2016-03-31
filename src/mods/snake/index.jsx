@@ -35,7 +35,8 @@ export default class Snake extends Component {
    */
   static defaultProps = {
     unit : 10,
-    model : []
+    model : [],
+    onEatCompleted(){}
   };
   /**
    * init state
@@ -51,6 +52,7 @@ export default class Snake extends Component {
   constructor(props) {
     super(props);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+    this._lastPop = null;
     this.play();
     //键盘操作
     document.addEventListener('keydown',function(e){
@@ -68,8 +70,8 @@ export default class Snake extends Component {
       });
     }.bind(this),true);
 
+    //touch 操作
     var mc = new Hammer.Manager(document.body);
-
     var Swipe = new Hammer.Swipe();
     mc.add(Swipe);
     mc.on('swipe',function(e){
@@ -88,6 +90,9 @@ export default class Snake extends Component {
         direction : userDirection
       });
     }.bind(this));
+    document.body.addEventListener('touchmove',function (e) {
+      e.preventDefault();
+    },true);
   }
   play(){
     this._ticker = setInterval(function(){
@@ -134,7 +139,7 @@ export default class Snake extends Component {
    * @param food
      */
   eat(food){
-    this.state.model.unshift(food);
+    this.state.model.push(this._lastPopNode);//吃食时,不是把食物加到数组头部,而是把删除的尾部补回来
     this.setState({model:this.state.model});
   }
   /**
@@ -152,14 +157,10 @@ export default class Snake extends Component {
    * @private
      */
   _doMove(snakeModel,newPos){
-    snakeModel.pop();
+    this._lastPopNode = snakeModel.pop();
     snakeModel.unshift(newPos);
   }
   render() {
-    if(this.props.gameState == "stop"){
-      this.stop();
-      return;
-    }
     var unit = this.props.unit;
     var snakeNodes = this.state.model.map(function (item) {
       let nodeStyle = {

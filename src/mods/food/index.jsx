@@ -30,7 +30,8 @@ export default class Food extends Component {
    */
   static defaultProps = {
     model:[],
-    unit : 10
+    unit : 10,
+    onDel : function(){}
   };
 
   /**

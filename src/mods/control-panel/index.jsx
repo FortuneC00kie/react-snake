@@ -1,6 +1,5 @@
 /**
- * 精灵的基类,核心功能主要是实现碰撞检测
- * Created by 舒克<shuke.cl@taobao.com> on 2016-3-21.
+ * Created by 舒克<shuke.cl@taobao.com> on 2016-3-31.
  */
 "use strict";
 
@@ -12,7 +11,7 @@ import classNames from 'classnames/bind';
 import styles from './index.scss';
 let cx = classNames.bind(styles);
 
-export default class Spirit extends Component {
+export default class ControlPanel extends Component {
 
   static propTypes = {
 
@@ -43,7 +42,9 @@ export default class Spirit extends Component {
   render() {
 
     return (
-      <p>Demo</p>
+      <div>
+        
+      </div>
     );
   }
 }
